@@ -27,6 +27,8 @@ Ideal for computational chemists who want reproducible, publication-ready CI top
 See `example_input/` for a working demo.
 
 ---
+---
+```
 conezen/
 │
 ├── ci_plot.py              # Main Python script for CI branching plane visualization
@@ -51,7 +53,8 @@ conezen/
 ├── README.md               # Main documentation, usage instructions, and citation info
 │
 └── .gitignore              # Ignore temporary or system files (__pycache__, .DS_Store, etc.)
-
+```
+---
 ## ✏️ Citation
 
 If you use **ConeZen** for published research, please cite:

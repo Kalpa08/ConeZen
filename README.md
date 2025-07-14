@@ -27,6 +27,30 @@ Ideal for computational chemists who want reproducible, publication-ready CI top
 See `example_input/` for a working demo.
 
 ---
+conezen/
+│
+├── ci_plot.py              # Main Python script for CI branching plane visualization
+├── requirements.txt        # Python dependencies (numpy, matplotlib)
+│
+├── example_input/          # Example input files (NAC, gradient vectors)
+│   ├── NAC.out
+│   ├── gradientA.out
+│   ├── gradientB.out
+│
+├── example_output/         # Example output files (optional: plots, animations)
+│   ├── surfaces.png
+│   ├── rotation.gif
+│
+├── LICENSE                 # GPL-3.0 License text
+├── CITATION.cff            # Citation file for GitHub citation badge
+├── .zenodo.json            # Zenodo metadata for DOI generation
+├── ACKNOWLEDGMENTS.md      # Acknowledgments for collaborators and mentors
+├── CONTRIBUTING.md         # Contribution guidelines
+├── CODE_OF_CONDUCT.md      # Contributor Code of Conduct
+├── RELEASE_NOTES.md        # Version history and changes
+├── README.md               # Main documentation, usage instructions, and citation info
+│
+└── .gitignore              # Ignore temporary or system files (__pycache__, .DS_Store, etc.)
 
 ## ✏️ Citation
 

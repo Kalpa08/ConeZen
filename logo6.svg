@@ -63,7 +63,6 @@
   <!-- Optional: add slight shadow or blur if you want -->
 
   <!-- Logo text -->
-  <!-- Logo text -->
   <defs>
     <linearGradient id="textGradient" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#1f77b4"/>

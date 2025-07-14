@@ -1,5 +1,6 @@
 # 🌀 ConeZen
 Copyright (C) 2025 Kalpa Dihingia
+
 **ConeZen** is an open-source Python tool for visualising the branching plane topology near a conical intersection (CI).
 
 It uses nonadiabatic coupling (NAC) and gradient data from the **SHARC–OpenMolcas** interface to generate clear 3D plots and rotating animations.  

@@ -26,8 +26,10 @@ Ideal for computational chemists who want reproducible, publication-ready CI top
 
 See `example_input/` for a working demo.
 
+
 ---
----
+Repository structure
+
 ```
 conezen/
 │

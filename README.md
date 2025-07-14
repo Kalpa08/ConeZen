@@ -74,7 +74,7 @@ conezen/
 ## ✏️ Citation
 
 If you use **ConeZen** for published research, please cite:
-- **Kalpa Dihingia**, *ConeZen: Visualiser for conical intersection branching planes* (Zenodo, DOI: TBD)
+- **Kalpajyoti Dihingia**, *ConeZen: Visualiser for conical intersection branching planes* (Zenodo, DOI: TBD)
 - The related scientific paper once published
 
 ```bibtex

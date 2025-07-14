@@ -1,4 +1,10 @@
 # 🌀 ConeZen
+
+![ConeZen Logo](logo.svg)
+
+# ConeZen
+Visualiser for Conical Intersection Branching Planes
+
 Copyright (C) 2025 Kalpajyoti Dihingia
 
 **ConeZen** is an open-source Python tool for visualising the branching plane topology near a conical intersection (CI).

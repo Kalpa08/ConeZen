@@ -1,5 +1,5 @@
 # 🌀 ConeZen
-Copyright (C) 2025 Kalpa Dihingia
+Copyright (C) 2025 Kalpajyoti Dihingia
 
 **ConeZen** is an open-source Python tool for visualising the branching plane topology near a conical intersection (CI).
 

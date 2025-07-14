@@ -1,6 +1,6 @@
 # 🌀 ConeZen
 
-![ConeZen Logo](logo2.svg)
+![ConeZen Logo](logo3.svg)
 
 # ConeZen
 Visualiser for Conical Intersection Branching Planes

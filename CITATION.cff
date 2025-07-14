@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use ConeZen, please cite the following metadata."
+title: "ConeZen: Visualiser for conical intersection branching planes"
+version: "1.0"
+authors:
+  - family-names: "Dihingia"
+    given-names: "Kalpa"
+    orcid: "https://orcid.org/0009-0006-1147-609X"
+date-released: "2025-07-14"
+doi: "10.xxxx/zenodo.xxxxx"
+url: "https://github.com/Kalpa08/conezen"
+license: "GPL-3.0-only"

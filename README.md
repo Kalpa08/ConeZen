@@ -79,7 +79,7 @@ If you use **ConeZen** for published research, please cite:
 
 ```bibtex
 @software{kalpa_conezen_2025,
-  author  = {Kalpa Dihingia},
+  author  = {Kalpajyoti Dihingia},
   title   = {ConeZen: Visualiser for conical intersection branching planes},
   year    = 2025,
   publisher = {Zenodo},

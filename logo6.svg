@@ -63,13 +63,25 @@
   <!-- Optional: add slight shadow or blur if you want -->
 
   <!-- Logo text -->
-  <text x="200" y="375"
+  <!-- Logo text -->
+  <defs>
+    <linearGradient id="textGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f77b4"/>
+      <stop offset="50%" stop-color="#2ca02c"/>
+      <stop offset="100%" stop-color="#d62728"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0.5" dy="0.5" stdDeviation="0.8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <text x="200" y="390"
         text-anchor="middle"
-        font-family="Verdana, sans-serif"
-        font-size="24"
-        fill="#222222"
-        letter-spacing="1">
+        font-family="Verdana, Helvetica, sans-serif"
+        font-size="28"
+        font-weight="bold"
+        fill="url(#textGradient)"
+        letter-spacing="1"
+        filter="url(#shadow)">
     ConeZen
   </text>
-
-</svg>

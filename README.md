@@ -12,7 +12,6 @@
 
 
 # ConeZen
-Visualiser for Conical Intersection Branching Planes
 
 Copyright (C) 2025 Kalpajyoti Dihingia
 

@@ -3,10 +3,7 @@ message: "If you use this script, please cite it as below."
 authors:
   - family-names: "Dihingia"
     given-names: "Kalpa"
-    orcid: "https://orcid.org/0000-0000-0000-0000"  # replace with your actual ORCID
-  - family-names: "Sebastian"
-    given-names: "Dr."
-    orcid: "https://orcid.org/0000-0000-0000-0000"  # replace with co-author’s ORCID if available
+    orcid: "https://orcid.org/0009-0006-1147-609X"
 title: "ConeZen: A Python Script for Conical Intersection Branching Plane Visualization"
 version: 1.0.0
 doi: 10.5281/zenodo.1234567  # replace with your real Zenodo DOI after your first release!

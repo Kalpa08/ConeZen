@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background circle for a logo feel -->
+  <circle cx="150" cy="150" r="130"
+          fill="none" stroke="#888888" stroke-width="2" stroke-dasharray="6,6"/>
+
+  <!-- Top ellipse -->
+  <ellipse cx="150" cy="70" rx="80" ry="25"
+           fill="none"
+           stroke="#1f77b4" stroke-width="4"/>
+
+  <!-- Upper cone lines -->
+  <line x1="70" y1="70" x2="150" y2="150"
+        stroke="#2ca02c" stroke-width="4"/>
+  <line x1="230" y1="70" x2="150" y2="150"
+        stroke="#2ca02c" stroke-width="4"/>
+
+  <!-- Lower cone lines -->
+  <line x1="70" y1="230" x2="150" y2="150"
+        stroke="#d62728" stroke-width="4"/>
+  <line x1="230" y1="230" x2="150" y2="150"
+        stroke="#d62728" stroke-width="4"/>
+
+  <!-- Bottom ellipse -->
+  <ellipse cx="150" cy="230" rx="80" ry="25"
+           fill="none"
+           stroke="#9467bd" stroke-width="4"/>
+
+  <!-- Light highlight arc for a modern look -->
+  <path d="M 40 150 A 110 110 0 0 1 260 150"
+        fill="none" stroke="#cccccc" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Label text -->
+  <text x="150" y="285"
+        text-anchor="middle"
+        font-family="Verdana"
+        font-size="20"
+        fill="#000000">
+    ConeZen
+  </text>
+</svg>

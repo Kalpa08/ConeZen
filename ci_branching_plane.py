@@ -29,6 +29,7 @@
 # ==============================================================================
 
 import numpy as np
+import pandas as pd
 import shutil
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
@@ -138,6 +139,16 @@ def load_vector_file(path: Path):
     if skipped:
         print(f"⚠️  Skipped {skipped} malformed lines in {path.name}.")
     return np.array(data)
+def extract_atom_symbols(xyz_file):
+    atom_list = []
+    with open(xyz_file, "r") as f:
+        lines = f.readlines()
+        for line in lines[2:]:
+            parts = line.strip().split()
+            if len(parts) < 4:
+                continue
+            atom_list.append(parts[0])
+    return atom_list
 
 # --------------------------- CORE LOGIC FUNCTIONS ----------------------------
 
@@ -256,6 +267,29 @@ def main():
 
     # -- Core calculation
     params = get_branching_plane_vectors(grad_A, grad_B, h, energy_gap)
+    xyz_file = get_file("Enter the xyz file name for atom labels", default="orca.xyz")
+    atom_list = extract_atom_symbols(xyz_file)
+    # Print and save branching plane vectors
+    N = len(atom_list)
+    x_hat_2d = params['x_hat'].reshape(N, 3)
+    y_hat_2d = params['y_hat'].reshape(N, 3)
+    print("\n" + "*" * 40)
+    print("⭐ x̃ vector (normalized):\n", x_hat_2d)
+    print("*" * 40)
+    print("⭐ ỹ vector (normalized):\n", x_hat_2d)
+    print("*" * 40 + "\n")
+    pd.DataFrame({'Atom': atom_list,
+                  'x': x_hat_2d[:,0], 
+                  'y': x_hat_2d[:,1],
+                  'z': x_hat_2d[:,2]
+                  }).to_csv("x_vectors.out", sep=' ', index=False, float_format="%.10f")
+    pd.DataFrame({'Atom': atom_list, 
+                  'x': y_hat_2d[:,0], 
+                  'y': y_hat_2d[:,1],
+                  'z': y_hat_2d[:,2]
+                  }).to_csv("y_vectors.out", sep=' ', index=False, float_format="%.10f")
+    print("✅ x_hat saved to x_vectors.out (with atom labels)")
+    print("✅ y_hat saved to y_vectors.out (with atom labels)")
     X, Y, E_A, E_B = compute_surfaces(params, E_X)
 
     # -- Plotting

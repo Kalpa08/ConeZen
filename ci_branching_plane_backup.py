@@ -56,7 +56,7 @@ def print_about():
         "",
         "📄  How to use:",
         "   1️⃣ Prepare input files:",
-        "      - Gradient file for state A and B (e.g., gradientA.out, gradientB.out)",
+        "      - Gradient file for states A and B (e.g., gradientA.out, gradientB.out)",
         "      - Non-adiabatic coupling (NAC) vector file (e.g., NAC.out)",
         "",
         "   2️⃣ Run: python3 ci_branching_plane.py",
@@ -67,11 +67,12 @@ def print_about():
         "",
         "💡  Theory implemented based on:",
         "     Ignacio Fdez. Galván et al., J. Chem. Theory Comput. 2016.",
+        "     doi:10.1021/acs.jctc.6b00384",
         "",
-        "🔗  License: Open-source under the MIT License",
+        "🔗  License: Open-source under the GNU GPL v3 License",
         "🗂️  Please cite the relevant paper if you use this tool in your work.",
         "="*60,
-        "✅  Done! Thank you for using the script.",
+        "✅  Done! Thank you for using ConeZen.",
         "="*60
     ]
 

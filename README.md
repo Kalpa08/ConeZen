@@ -52,7 +52,7 @@ pandas
      - `gradientA.out`
      - `gradientB.out`
      - `NAC.out`
-     - *(Optional)* Your `.xyz` geometry file
+     -  Your `orca.xyz` geometry file
 
 2. **Run the visualizer:**
 

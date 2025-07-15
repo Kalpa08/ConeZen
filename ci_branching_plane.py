@@ -165,6 +165,13 @@ def get_branching_plane_vectors(grad_A, grad_B, h, energy_gap):
     s_y = np.dot(s_ab, y_hat) / del_gh
     sigma = np.sqrt(s_x ** 2 + s_y ** 2)
     theta_s_rad = np.arctan2(s_y, s_x)
+    print("\n" + "="*40)
+    print("  Branching Plane Key Quantities")
+    print(f"theta_s (θ_s) in degrees: {np.degrees(theta_s_rad):.6f}")
+    print(f"del_gh (δ_gh): {del_gh}")
+    print(f"delta_gh (Δ_gh): {delta_gh}")
+    print(f"sigma (σ): {sigma}")
+    print("="*40 + "\n")
     return {
         'x_hat': x_hat, 'y_hat': y_hat,
         'del_gh': del_gh, 'delta_gh': delta_gh,

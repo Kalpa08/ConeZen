@@ -77,7 +77,7 @@ If you use **ConeZen** for published research, please cite:
 - The related scientific paper once published
 
 ```bibtex
-@software{conezen_2025,
+@software{conezen,
   author  = {Kalpajyoti Dihingia},
   title   = {ConeZen: Visualiser for conical intersection branching planes},
   year    = 2025,

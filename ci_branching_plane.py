@@ -276,18 +276,22 @@ def main():
     print("\n" + "*" * 40)
     print("⭐ x̃ vector (normalized):\n", x_hat_2d)
     print("*" * 40)
-    print("⭐ ỹ vector (normalized):\n", x_hat_2d)
+    print("⭐ ỹ vector (normalized):\n", y_hat_2d)
     print("*" * 40 + "\n")
-    pd.DataFrame({'Atom': atom_list,
-                  'x': x_hat_2d[:,0], 
-                  'y': x_hat_2d[:,1],
-                  'z': x_hat_2d[:,2]
-                  }).to_csv("x_vectors.out", sep=' ', index=False, float_format="%.10f")
-    pd.DataFrame({'Atom': atom_list, 
-                  'x': y_hat_2d[:,0], 
-                  'y': y_hat_2d[:,1],
-                  'z': y_hat_2d[:,2]
-                  }).to_csv("y_vectors.out", sep=' ', index=False, float_format="%.10f")
+    with open("x_vectors.out", "w") as f:
+        f.write("atoms x vectors\n")
+        pd.DataFrame({'Atom': atom_list,
+                      'x': x_hat_2d[:,0], 
+                      'y': x_hat_2d[:,1],
+                      'z': x_hat_2d[:,2]
+                      }).to_csv(f, sep=' ', index=False, header=False,float_format="%.10f")
+    with open("y_vectors.out", "w") as f:
+        f.write("atoms y vectors\n")
+        pd.DataFrame({'Atom': atom_list, 
+                      'x': y_hat_2d[:,0], 
+                      'y': y_hat_2d[:,1],
+                      'z': y_hat_2d[:,2]
+                      }).to_csv(f, sep=' ', index=False, header=False, float_format="%.10f")
     print("✅ x_hat saved to x_vectors.out (with atom labels)")
     print("✅ y_hat saved to y_vectors.out (with atom labels)")
     X, Y, E_A, E_B = compute_surfaces(params, E_X)

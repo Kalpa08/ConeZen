@@ -13,7 +13,7 @@
 ## Overview
 
 **ConeZen** is an open-source Python tool for visualizing the branching plane topology near a conical intersection (CI).  
-It processes nonadiabatic coupling (NAC) and gradient data from **SHARC–OpenMolcas** (sharc manual(https://github.com/Kalpa08/conezen/edit/main/README_backup.md))to generate high-quality, publication-ready 3D plots and animations for computational chemistry applications.
+It processes nonadiabatic coupling (NAC) and gradient data from **SHARC–OpenMolcas** [sharc manual](https://github.com/Kalpa08/conezen/edit/main/README_backup.md) to generate high-quality, publication-ready 3D plots and animations for computational chemistry applications.
 
 ---
 

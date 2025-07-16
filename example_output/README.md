@@ -9,6 +9,6 @@ This folder contains example output files generated using **ConeZen**:
 Use these as a reference for what to expect when you run your own CI visualization.
 
 <p align="center">
-  <img src="example_output/static_image.png" alt="Example CI Plot" width="500"/>
+  <img src="example_output/geom_57_CI_NM_plot.png" alt="Example CI Plot" width="500"/>
 </p>
 

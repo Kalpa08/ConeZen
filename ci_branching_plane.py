@@ -223,8 +223,8 @@ def plot_surfaces(X, Y, E_A, E_B, fig_width, fig_height, elev=28, azim=-133, tit
     ax = fig.add_subplot(111, projection='3d')
     surf1 = ax.plot_surface(X, Y, E_A, cmap='viridis', edgecolor='none', alpha=0.8, antialiased=True)
     surf2 = ax.plot_surface(X, Y, E_B, cmap='plasma', edgecolor='none', alpha=0.9, antialiased=True)
-    ax.set_xlabel('X direction', fontsize=12, labelpad=15)
-    ax.set_ylabel('Y direction', fontsize=12, labelpad=15)
+    ax.set_xlabel('g direction', fontsize=12, labelpad=15)
+    ax.set_ylabel('h direction', fontsize=12, labelpad=15)
     ax.set_zlabel('Energy', fontsize=12, labelpad=15)
     if title:
         ax.set_title(title)

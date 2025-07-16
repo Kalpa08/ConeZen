@@ -159,7 +159,7 @@ def get_branching_plane_vectors(grad_A, grad_B, h):
     s_ab = 0.5 * (grad_B + grad_A)
     g_ab = g_ab.flatten()
     s_ab = s_ab.flatten()
-    h_ab = h_ab.flatten()
+    h_ab = h.flatten()
     #print("original |g_ab|", np.linalg.norm(g_ab))
     #print("original |h_ab|", np.linalg.norm(h_ab))
     h_ab=h_ab*(np.linalg.norm(g_ab)/np.linalg.norm(h_ab))

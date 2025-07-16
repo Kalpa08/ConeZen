@@ -245,7 +245,7 @@ def animate_surfaces(X, Y, E_A, E_B, fig_width, fig_height, anim_dpi, anim_fps, 
     ax.plot_surface(X, Y, E_B, cmap="plasma", alpha=0.8, edgecolor='none')
     ax.set_xlabel("g displacement")
     ax.set_ylabel("h displacement")
-    ax.set_zlabel("Energy")
+    ax.set_zlabel("Energy (eV)")
     for axis in [ax.xaxis, ax.yaxis, ax.zaxis]:
         axis.pane.fill = False
     ax.grid(True, linestyle='--', alpha=0.3)

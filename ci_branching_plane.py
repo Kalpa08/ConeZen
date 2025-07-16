@@ -154,36 +154,39 @@ def extract_atom_symbols(xyz_file):
 # --------------------------- CORE LOGIC FUNCTIONS ----------------------------
 
 def get_branching_plane_vectors(grad_A, grad_B, h):
-    """Compute the branching plane vectors and related quantities."""
+    """Compute the branching plane vectors and related quantities[Eq. 36, 37]."""
     g_ab = 0.5 * (grad_B - grad_A)
     s_ab = 0.5 * (grad_B + grad_A)
     g_ab = g_ab.flatten()
-    s_ab = s_ab.flatten()
+    s_ab = s_ab.flatten()      
     h_ab = h.flatten()
     #print("original |g_ab|", np.linalg.norm(g_ab))
     #print("original |h_ab|", np.linalg.norm(h_ab))
+    # Scaling h_ab to g_ab before orthogonalization
     h_ab=h_ab*(np.linalg.norm(g_ab)/np.linalg.norm(h_ab))
     #print("original g_ab", g_ab)
     #print("original h_ab scaled", h_ab)
     #print("magnitute of scaled g or |g|", np.linalg.norm(g_ab))
     #print("magnitute of scaled h or |h|", np.linalg.norm(h_ab))
-    angle_gh = np.arccos(np.clip(np.dot(g_ab, h_ab) / (np.linalg.norm(g_ab) * np.linalg.norm(h_ab)), -1.0, 1.0))
+    #angle_gh = np.arccos(np.clip(np.dot(g_ab, h_ab) / (np.linalg.norm(g_ab) * np.linalg.norm(h_ab)), -1.0, 1.0))
     #print(f"Initial angle between g and h vectors: {np.degrees(angle_gh):.3f} degrees")
     numerator = 2 * np.dot(g_ab, h_ab)
     denominator = np.dot(g_ab, g_ab) - np.dot(h_ab, h_ab)
     beta_rad = 0.5 * np.arctan2(numerator, denominator)
     cosb, sinb = np.cos(beta_rad), np.sin(beta_rad)
+    # Rotation of two intersecting states by an angle beta/2 causes transformation in the
+    # corresponding g_ab and h_ab vectors [Eq 38 and 39]
     g_tilde = g_ab * cosb + h_ab * sinb
     h_tilde = h_ab * cosb - g_ab * sinb
     g2, h2 = np.dot(g_tilde, g_tilde), np.dot(h_tilde, h_tilde)
-    x_hat = g_tilde / np.sqrt(g2)
-    y_hat = h_tilde / np.sqrt(h2)
-    del_gh = np.sqrt(0.5 * (g2 + h2))
-    delta_gh = (g2 - h2) / (g2 + h2)
-    s_x = np.dot(s_ab, x_hat) / del_gh
+    x_hat = g_tilde / np.sqrt(g2) # Eq. 41
+    y_hat = h_tilde / np.sqrt(h2) # Eq. 41
+    del_gh = np.sqrt(0.5 * (g2 + h2)) #Eq. 44
+    delta_gh = (g2 - h2) / (g2 + h2)  # Eq. 45
+    s_x = np.dot(s_ab, x_hat) / del_gh  # Eq. 49 
     s_y = np.dot(s_ab, y_hat) / del_gh
-    sigma = np.sqrt(s_x ** 2 + s_y ** 2)
-    theta_s_rad = np.arctan2(s_y, s_x)
+    sigma = np.sqrt(s_x ** 2 + s_y ** 2) # Eq 48
+    theta_s_rad = np.arctan2(s_y, s_x) # Eq. 52, tan(theta_s)=s_y/s_x
     print("\n" + "="*40)
     print("  Branching Plane Key Quantities")
     print(f"theta_s (θ_s) in degrees: {np.degrees(theta_s_rad):.6f}")
@@ -204,17 +207,17 @@ def compute_surfaces(params, E_X):
     Y = R * np.sin(Theta)
     delta_gh, del_gh, sigma, theta_s_rad = params['delta_gh'], params['del_gh'], params['sigma'], params['theta_s_rad']
     theta_rad = Theta
-    part1 = del_gh * R * (sigma * np.cos(theta_rad - theta_s_rad))
+    part1 = del_gh * R * (sigma * np.cos(theta_rad - theta_s_rad)) # A part of Eq 52
     sqrt_term = 1 + delta_gh * np.cos(2 * theta_rad)
     if np.any(sqrt_term < 0):
         print("⚠️  Some negative values in sqrt term; setting them to zero.")
         sqrt_term = np.maximum(sqrt_term, 0)
-    part2 = del_gh * R * np.sqrt(sqrt_term)
-    E_A = E_X + part1 + part2
+    part2 = del_gh * R * np.sqrt(sqrt_term)   # A part of Eq. 52
+    E_A = E_X + part1 + part2    # Full Eq. 52
     E_B = E_X + part1 - part2
     return X, Y, E_A, E_B
 
-def plot_surfaces(X, Y, E_A, E_B, fig_width, fig_height, elev=45, azim=210, title=None):
+def plot_surfaces(X, Y, E_A, E_B, fig_width, fig_height, elev=28, azim=-133, title=None):
     """Plot the two energy surfaces."""
     fig = plt.figure(figsize=(fig_width, fig_height))
     ax = fig.add_subplot(111, projection='3d')

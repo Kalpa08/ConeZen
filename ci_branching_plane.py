@@ -225,8 +225,8 @@ def plot_surfaces(X, Y, E_A, E_B, fig_width, fig_height, elev=28, azim=-133, tit
     ax = fig.add_subplot(111, projection='3d')
     surf1 = ax.plot_surface(X, Y, E_A, cmap='viridis', edgecolor='none', alpha=0.8, antialiased=True)
     surf2 = ax.plot_surface(X, Y, E_B, cmap='plasma', edgecolor='none', alpha=0.9, antialiased=True)
-    ax.set_xlabel('g displacement', fontsize=12, labelpad=15)
-    ax.set_ylabel('h displacement', fontsize=12, labelpad=15)
+    ax.set_xlabel('g ', fontsize=12, labelpad=15)
+    ax.set_ylabel('h ', fontsize=12, labelpad=15)
     ax.set_zlabel('Energy (eV)', fontsize=12, labelpad=15)
     if title:
         ax.set_title(title)
@@ -243,8 +243,8 @@ def animate_surfaces(X, Y, E_A, E_B, fig_width, fig_height, anim_dpi, anim_fps, 
     ax = fig.add_subplot(111, projection="3d")
     ax.plot_surface(X, Y, E_A, cmap="viridis", alpha=0.8, edgecolor='none')
     ax.plot_surface(X, Y, E_B, cmap="plasma", alpha=0.8, edgecolor='none')
-    ax.set_xlabel("g displacement")
-    ax.set_ylabel("h displacement")
+    ax.set_xlabel("g")
+    ax.set_ylabel("h")
     ax.set_zlabel("Energy (eV)")
     for axis in [ax.xaxis, ax.yaxis, ax.zaxis]:
         axis.pane.fill = False

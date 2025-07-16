@@ -6,7 +6,7 @@ doi: "10.5281/zenodo.YOUR_DOI_HERE"
 date-released: "2025-07-14"
 authors:
   - family-names: "Dihingia"
-    given-names: "Kalpa"
+    given-names: "Kalpajyoti"
     orcid: "https://orcid.org/0009-0006-1147-609X"
     affiliation: "Banaras Hindu University (BHU)"
 license: "GPL-3.0"
@@ -24,7 +24,7 @@ preferred-citation:
   type: software
   authors:
     - family-names: "Dihingia"
-      given-names: "Kalpa"
+      given-names: "Kalpajyoti"
   title: "ConeZen: Visualiser for Conical Intersection Branching Planes"
   version: "1.0.0"
   doi: "10.5281/zenodo.YOUR_DOI_HERE"

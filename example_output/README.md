@@ -7,3 +7,8 @@ This folder contains example output files generated using **ConeZen**:
 - `rotation_animation.mp4` – the same animation in high-resolution video format.
 
 Use these as a reference for what to expect when you run your own CI visualization.
+
+<p align="center">
+  <img src="example_output/static_image.png" alt="Example CI Plot" width="500"/>
+</p>
+

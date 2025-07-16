@@ -44,6 +44,7 @@ DEFAULT_ANIM_DPI = 200
 DEFAULT_ANIM_FPS = 20
 R_GRID = np.linspace(0, 0.001, 500)
 THETA_GRID = np.linspace(0, 2 * np.pi, 500)
+DEFAULT_EX=0 # hartree energy at crossing point
 
 # -------------------------- UTILITY FUNCTIONS --------------------------------
 
@@ -152,15 +153,22 @@ def extract_atom_symbols(xyz_file):
 
 # --------------------------- CORE LOGIC FUNCTIONS ----------------------------
 
-def get_branching_plane_vectors(grad_A, grad_B, h, energy_gap):
+def get_branching_plane_vectors(grad_A, grad_B, h):
     """Compute the branching plane vectors and related quantities."""
     g_ab = 0.5 * (grad_B - grad_A)
     s_ab = 0.5 * (grad_B + grad_A)
     g_ab = g_ab.flatten()
-    h_ab = h.flatten() * energy_gap
     s_ab = s_ab.flatten()
+    h_ab = h_ab.flatten()
+    #print("original |g_ab|", np.linalg.norm(g_ab))
+    #print("original |h_ab|", np.linalg.norm(h_ab))
+    h_ab=h_ab*(np.linalg.norm(g_ab)/np.linalg.norm(h_ab))
+    #print("original g_ab", g_ab)
+    #print("original h_ab scaled", h_ab)
+    #print("magnitute of scaled g or |g|", np.linalg.norm(g_ab))
+    #print("magnitute of scaled h or |h|", np.linalg.norm(h_ab))
     angle_gh = np.arccos(np.clip(np.dot(g_ab, h_ab) / (np.linalg.norm(g_ab) * np.linalg.norm(h_ab)), -1.0, 1.0))
-    print(f"Initial angle between g and h vectors: {np.degrees(angle_gh):.3f} degrees")
+    #print(f"Initial angle between g and h vectors: {np.degrees(angle_gh):.3f} degrees")
     numerator = 2 * np.dot(g_ab, h_ab)
     denominator = np.dot(g_ab, g_ab) - np.dot(h_ab, h_ab)
     beta_rad = 0.5 * np.arctan2(numerator, denominator)
@@ -262,11 +270,10 @@ def main():
     h = load_vector_file(nac_file)
 
     # -- Numeric/energy inputs
-    energy_gap = get_numeric("Enter the energy gap between the two states (Hartree)")
-    E_X = get_numeric("Enter the energy of the intersection point (Hartree)")
+    E_X = get_numeric("Enter the energy of the intersection point (Hartree)", default=DEFAULT_EX)
 
     # -- Core calculation
-    params = get_branching_plane_vectors(grad_A, grad_B, h, energy_gap)
+    params = get_branching_plane_vectors(grad_A, grad_B, h)
     xyz_file = get_file("Enter the xyz file name for atom labels", default="orca.xyz")
     atom_list = extract_atom_symbols(xyz_file)
     # Print and save branching plane vectors

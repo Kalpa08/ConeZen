@@ -20,7 +20,7 @@
 **ConeZen** is a lightweight, open-source Python package designed to characterize and visualize the branching plane topology at a conical intersection (CI). The shape and orientation of a CI's potential energy surfaces dictate the pathways for ultrafast, non-radiative electronic transitions, which are fundamental to processes like vision, photosynthesis, and DNA photostability.
 
 Using output from standard quantum chemistry programs (tested on SHARC-OpenMolcas), **ConeZen** computes key topological descriptors and renders intuitive 3D potential energy surfaces. This allows researchers to move from raw numerical data to an intuitive, quantitative understanding of the CI landscape, helping to predict the outcomes of photochemical reactions.
-- Note: ConeZen was tested with the gradients and NAC obtained from SHARC-OpenMolcas interface. (see [SHARC Manual](https://sharc-md.org/?page_id=1454))
+- 📝Note: ConeZen was tested with the gradients and NAC obtained from SHARC-OpenMolcas interface. (see [SHARC Manual](https://sharc-md.org/?page_id=1454))
 ---
 
 ## ✨ Key Features

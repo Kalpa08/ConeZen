@@ -19,12 +19,12 @@ Using output from standard quantum chemistry programs (tested on SHARC-OpenMolca
 
 ## ✨ Key Features
 
--**Automated Analysis**  
+**Automated Analysis**  
 Computes key CI descriptors:  
-    -the average slope or pitch ( $\delta{gh}$ )  
-    -the cone ellipticity or asymmetry ($\Delta{gh}$)  
-    -the overall tilt magnitude and direction ($\sigma$), $\theta_s$.   
-    This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating.   
+ -the average slope or pitch ( $\delta{gh}$ )  
+ -the cone ellipticity or asymmetry ($\Delta{gh}$)  
+ -the overall tilt magnitude and direction ($\sigma$), $\theta_s$.   
+This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating.   
 
 -**High-Quality Visualization**  
 Generates publication-ready 3D surface plots using Matplotlib. The plots are fully customizable and can be exported in various high-resolution formats (PNG, PDF, SVG) for direct inclusion in presentations and publications.  

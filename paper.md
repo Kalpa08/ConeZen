@@ -53,7 +53,7 @@ $$
 E(r, \theta) = E_{X} + \delta_{gh} \cdot r \left( \sigma \cos(\theta - \theta_s) \pm \sqrt{1 + \Delta_{gh} cos(2 \theta )} \right )
 $$
 
-where $$\E_{X}$$ is the energy at the intersection point.
+where $$ \E_{X} $$ is the energy at the intersection point.
 
 # Example
 

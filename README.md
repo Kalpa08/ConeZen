@@ -21,9 +21,9 @@ Using output from standard quantum chemistry programs (tested on SHARC-OpenMolca
 
 - **Automated Analysis**  
 Computes key CI descriptors:  
- - the average slope or pitch ( $\delta{gh}$ )  
- - the cone ellipticity or asymmetry ($\Delta{gh}$)  
- - the overall tilt magnitude and direction ($\sigma$), $\theta_s$.   
+ - The average slope or pitch ( $\delta{gh}$ )  
+ - The cone ellipticity or asymmetry ($\Delta{gh}$)  
+ - The overall tilt magnitude and direction ($\sigma$), $\theta_s$.   
 This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating.   
 
 - **High-Quality Visualization**  
@@ -132,10 +132,10 @@ plt.show()
 
 ConeZen expects simple text files for the gradients, nonadiabatic coupling (NAC) vectors, and geometry. The format is designed for easy generation from post-processing scripts and is directly compatible with output from programs like SHARC-OpenMolcas.
 
--Gradient and NAC Files (```gradientA.out```, ```gradientB.out```, ```NAC.out```):
-	-The first line is treated as a header and is skipped.
-	-Subsequent lines should contain the Cartesian vector components (x, y, z) for each atom, typically in units of Hartree/Bohr.
-	-The script reads the first three numeric values on each line. Any additional text (like atom symbols) is ignored.
+- Gradient and NAC Files (```gradientA.out```, ```gradientB.out```, ```NAC.out```):
+	- The first line is treated as a header and is skipped.
+	- Subsequent lines should contain the Cartesian vector components (x, y, z) for each atom, typically in units of Hartree/Bohr.
+	- The script reads the first three numeric values on each line. Any additional text (like atom symbols) is ignored.
 - Geometry File (.xyz):
 	- A standard XYZ file format is expected. This is used to correctly label the atoms in the output vector files.
 	- The first two lines (number of atoms and a comment line) are skipped as per the standard.

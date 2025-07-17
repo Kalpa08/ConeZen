@@ -68,7 +68,7 @@ conda activate conezen_env
 ```
 ### 3. Install the Package
 
-Finally, install **ConeZen** and all its required dependencies using pip. The . tells pip to install the package located in the current directory.
+Finally, install **ConeZen** and all its required dependencies using pip. The ```.``` tells pip to install the package located in the current directory.
 
 ```
 # Install ConeZen

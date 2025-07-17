@@ -13,9 +13,6 @@
 
 <p align="center"><i>Visualiser for Conical Intersection Branching Planes</i></p>
 
----
-
----
 
 ---
 ## Conical Intersection Branching Plane Visualization

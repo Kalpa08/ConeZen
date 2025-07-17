@@ -1,26 +1,20 @@
 # 🌀 ConeZen
 <p align="center">
-  <img src="logo6.svg" alt="ConeZen Logo" width="300"/>
-</p>
-
-<h1 align="center">ConeZen</h1>
-
-<p align="center"><i>Visualiser for Conical Intersection Branching Planes</i></p>
-
-<p align="center">
   <img src="logo6.svg" alt="ConeZen Logo" width="300"/>
 </p>
 
 <h1 align="center">ConeZen</h1>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3.0"></a>
-  <a href="https://pypi.org/project/conezen/"><img src="https://img.shields.io/pypi/v/conezen.svg" alt="PyPI version"></a>
-  <a href="#"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python Version"></a>
-  <a href="https://doi.org/10.xxxx/zenodo.xxxxx"><img src="https://zenodo.org/badge/DOI/10.xxxx/zenodo.xxxxx.svg" alt="DOI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3.0"></a>
+  <a href="https://pypi.org/project/conezen/"><img src="https://img.shields.io/pypi/v/conezen.svg" alt="PyPI version"></a>
+  <a href="#"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python Version"></a>
+  <a href="https://doi.org/10.xxxx/zenodo.xxxxx"><img src="https://zenodo.org/badge/DOI/10.xxxx/zenodo.xxxxx.svg" alt="DOI"></a>
 </p>
 
 <p align="center"><i>Visualiser for Conical Intersection Branching Planes</i></p>
+
+---
 
 ---
 ## Conical Intersection Branching Plane Visualization

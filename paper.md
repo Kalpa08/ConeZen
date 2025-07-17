@@ -50,7 +50,7 @@ Using this basis, ConeZen computes several topological descriptors:
 The energy surfaces $(E(r, \theta)\) of the two intersecting states are computed using the analytical expression:
 
 $$
-$E(r, \theta) = $E_{X} + $delta_{gh} \cdot r \left( \sigma \cos(\theta - \theta_s) \pm \sqrt{1 + \Delta_{gh} $cos(2 $\theta$ )} \right)
+E(r, \theta) = E_{X} + delta_{gh} \cdot r \left( \sigma \cos(\theta - \theta_s) \pm \sqrt{1 + \Delta_{gh} cos(2 $\theta$ )} \right
 $$
 
 where $E_{X} is the energy at the intersection point.

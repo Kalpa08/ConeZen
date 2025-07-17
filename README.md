@@ -265,6 +265,6 @@ For full metadata and citation, see [`CITATION.cff`](CITATION.cff) and [`.zenodo
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributions
 
 Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before submitting issues or pull requests.

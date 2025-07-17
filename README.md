@@ -41,20 +41,57 @@ Offers both an easy-to-use interactive Command-Line Interface (CLI) and an impor
 
 ## 🚀 Installation
 
-ConeZen is distributed on the Python Package Index (PyPI). It is highly recommended to install ConeZen in a dedicated Python virtual environment to avoid conflicts with other packages.
+Follow these steps to install ConeZen from the source code.
 
-Clone this repository and install dependencies:
+### Clone the Repository
+
+First, clone the repository to your local machine and navigate into the directory.
+```
+git clone https://github.com/Kalpa08/ConeZen.git
+cd ConeZen
+```
+### Create a Conda Environment
+
+It's recommended to create a dedicated environment to manage dependencies. The following commands will create and activate a new environment named 
+```conezen_env``` with ```Python 3.11```.
 
 ```bash
 # Create and activate a virtual environment (optional but recommended)
-python -m venv conezen_env
-source conezen_env/bin/activate  # On Windows, use `conezen_env\Scripts\activate`
+conda create --name conezen_env python=3.11
+conda activate conezen_env 
+```
+### Install the Package
 
+Finally, install ConeZen and all its required dependencies using pip. The . tells pip to install the package located in the current directory.
+
+```
 # Install ConeZen
-pip install conezen
+pip install build
+pip install .
 
 ````
-For creating MP4 animations, you will also need to have FFmpeg installed and available in your system's PATH.
+That's it! ConeZen is now installed in your environment and ready to use.
+
+### System Dependencies (Required for Animations)
+
+To create and save animations as MP4 files, you must have FFmpeg installed and accessible in your system's PATH.
+
+- **Windows:** Download the binaries from the official FFmpeg site and add the bin folder to your system's PATH.
+
+- **macOS:** Install using Homebrew:
+
+```Bash
+
+brew install ffmpeg
+```
+**Linux (Ubuntu/Debian):** Install using the package manager:
+
+```Bash
+sudo apt-get install ffmpeg
+```
+
+### Usage
+**ConeZen** can be run in two ways: through the command line or as a Python library.
 
 ---
 ## Usage

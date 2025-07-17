@@ -14,6 +14,9 @@
 <p align="center"><i>Visualiser for Conical Intersection Branching Planes</i></p>
 
 
+
+<a href="https://github.com/Kalpa08/ConeZen/releases"><img src="https://img.shields.io/github/v/release/Kalpa08/ConeZen" alt="GitHub release"></a>
+
 ---
 ## Conical Intersection Branching Plane Visualization
 

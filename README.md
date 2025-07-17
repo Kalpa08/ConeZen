@@ -76,9 +76,9 @@ That's it! ConeZen is now installed in your environment and ready to use.
 
 To create and save animations as MP4 files, you must have FFmpeg installed and accessible in your system's PATH.
 
-- **Windows:** Download the binaries from the official FFmpeg site and add the bin folder to your system's PATH.
+- **Windows:** Download the binaries from the official [FFmpeg site](https://ffmpeg.org/download.html) and add the bin folder to your system's PATH.
 
-- **macOS:** Install using Homebrew:
+- **macOS:** Install using [Homebrew](https://brew.sh/):
 
 ```Bash
 

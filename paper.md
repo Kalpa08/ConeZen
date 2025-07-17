@@ -47,7 +47,7 @@ Using this basis, ConeZen computes several topological descriptors:
 - **Asymmetry** ($\Delta_{gh}$): ellipticity of the cone.
 - **Tilt** $$\sigma$$ and **tilt heading** $$\theta_s$$ : define the slope of the average PES.
 
-The energy surfaces $$ E(r, \theta) $$ of the two intersecting states are computed using the analytical expression:
+The energy surfaces $$E(r, \theta)$$ of the two intersecting states are computed using the analytical expression:
 
 $$
 E(r, \theta) = E_{X} + \delta_{gh} \cdot r \left( \sigma \cos(\theta - \theta_s) \pm \sqrt{1 + \Delta_{gh} cos(2 \theta )} \right )

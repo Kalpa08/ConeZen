@@ -191,7 +191,7 @@ ConeZen expects simple text files for the gradients, nonadiabatic coupling (NAC)
 - Geometry File (.xyz):
 	- A standard XYZ file format is expected. This is used to correctly label the atoms in the output vector files.
 	- The first two lines (number of atoms and a comment line) are skipped as per the standard.
-Example gradientA.out:
+Example ```gradientA.out```:
 ```
 7 3 ! m1 1 s1 3 ms1 0
  1.538527244911E-002  2.700614793356E-002 -1.774304949876E-002
@@ -199,7 +199,7 @@ Example gradientA.out:
  6.585259497396E-004 -9.263239120174E-004  3.094972603908E-004
  ...
  ```
-Example orca.xyz:	
+Example ```orca.xyz```:	
 ```
 7
 Coordinates from ORCA-job orca

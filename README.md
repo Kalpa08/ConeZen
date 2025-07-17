@@ -23,7 +23,7 @@ Using output from standard quantum chemistry programs (tested on SHARC-OpenMolca
 Computes key CI descriptors:  
  - The average slope or pitch ( $\delta{gh}$ )  
  - The cone ellipticity or asymmetry ( $$\Delta{gh}$$ )  
- - The overall tilt magnitude and direction ( $\sigma$ ), $\theta_s$.   
+ - The overall tilt magnitude and direction ( &sigma ), $\theta_s$.   
 This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating.   
 
 - **High-Quality Visualization**  

@@ -126,8 +126,8 @@ def animate_surfaces(X, Y, E_A, E_B, fig_width, fig_height, anim_dpi, anim_fps, 
     ax = fig.add_subplot(111, projection="3d")
     ax.plot_surface(X, Y, E_A, cmap="viridis", alpha=0.8, edgecolor='none')
     ax.plot_surface(X, Y, E_B, cmap="plasma", alpha=0.8, edgecolor='none')
-    ax.set_xlabel("g̃ (a.u.)")
-    ax.set_ylabel("h̃ (a.u.)")
+    ax.set_xlabel("g")
+    ax.set_ylabel("h")
     ax.set_zlabel("Energy (eV)")
     
     def update_rotation(frame):

@@ -37,7 +37,7 @@ The program serves a broad range of theoretical chemists by standardizing CI vis
 
 # Implementation
 
-ConeZen is written in Python 3 and built on standard scientific libraries including **NumPy** `@harris2020array`, **Pandas** `mckinney-proc-scipy-2010`, and **Matplotlib** `@Hunter:2007`.
+ConeZen is written in Python 3 and built on standard scientific libraries including **NumPy** `@harris2020array`, **Pandas** `@mckinney-proc-scipy-2010`, and **Matplotlib** `@Hunter:2007`.
 
 The package implements the first-order analytical model described by Fdez. Galván et al. `@Galvan2016`, which uses two input vectors: the gradient difference vector $$g^{AB}$$ and the nonadiabatic coupling vector $$h^{AB}$$. These are orthogonalized and normalized to generate a local basis ( $$\hat{x}$$, $$\hat{y}$$ ) for the branching plane.
 

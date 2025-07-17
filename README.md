@@ -98,7 +98,7 @@ sudo apt-get install ffmpeg
 
 
 ---
-## Usage
+## 🧪 Usage
 **ConeZen** can be run in two ways: through the command line or as a Python library.
 
 ## 1. Command-Line Interface (CLI)
@@ -180,7 +180,7 @@ plt.show()
 #fig.savefig("my_intersection.pdf", dpi=300, bbox_inches='tight')
 ```
 
-## Input File Format
+## 📄 Input File Format
 
 ConeZen expects simple text files for the gradients, nonadiabatic coupling (NAC) vectors, and geometry. The format is designed for easy generation from post-processing scripts and is directly compatible with output from programs like SHARC-OpenMolcas.
 
@@ -216,13 +216,13 @@ Coordinates from ORCA-job orca
  H   -1.55677664790204     -0.76202298903129      0.52236315843451
  ...
 ```
-### Output
+### 📤 Output
 The CLI tool can generate several useful output files in your working directory:
 - ```ci_parameters.txt```: A text file containing the calculated topological quantities ($\delta_{gh}$, $$\Delta_{gh}$$ , σ , $\theta_s$). This provides a quick human-readable summary of the CI's characters.
 - ```x_vectors.out```, ```y_vectors.out```:  The orthonormal branching plane vectors $\hat{x}$ and $\hat{y}$.
 - ```conical_intersection.png```: A high-resolution image of the 3D plot. The plot is saved with a transparent background and tight bounding box, making it easy to incorporate into other documents.
 
-# Citing ConeZen
+# 🧾 Citing ConeZen
 
 If you use ConeZen in your research, please cite the accompanying paper. Your citation allows us to track the software's impact and helps support its continued development.
 

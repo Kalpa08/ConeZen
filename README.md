@@ -157,7 +157,7 @@ Coordinates from ORCA-job orca
 ```
 ### Output
 The CLI tool can generate several useful output files in your working directory:
-- ci_parameters.txt: A text file containing the calculated topological quantities ($\delta{gh}$,$$\Delta{gh}$$, $\sigma$, $\theta_s$). This provides a quick human-readable summary of the CI's characters.
+- ci_parameters.txt: A text file containing the calculated topological quantities ($\delta{gh}$, $$\Delta{gh}$$ , $\sigma$, $\theta_s$). This provides a quick human-readable summary of the CI's characters.
 - x_vectors.out, y_vectors.out:  The orthonormal branching plane vectors $\hat{x}$ and $\hat{y}$.
 - conical_intersection.png: A high-resolution image of the 3D plot. The plot is saved with a transparent background and tight bounding box, making it easy to incorporate into other documents.
 

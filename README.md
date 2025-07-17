@@ -227,7 +227,7 @@ The CLI tool can generate several useful output files in your working directory:
 If you use ConeZen in your research, please cite the accompanying paper. Your citation allows us to track the software's impact and helps support its continued development.
 
 ```
-Kalpajyoti Dihingia & Biswajit Maiti, ConeZen: A Python Package for Visualizing Conical Intersection Branching Planes, J. Open Source Softw. (2025).
+Kalpajyoti Dihingia & Biswajit Maiti, ConeZen: A Python Package for Visualizing Conical Intersection Branching Planes, journal name (2025).
 
 Zenodo DOI: [Zenodo DOI will go here]
 

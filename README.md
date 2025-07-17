@@ -41,7 +41,7 @@ Offers both an easy-to-use interactive Command-Line Interface (CLI) and an impor
 
 ## 🚀 Installation
 
-Follow these steps to install ConeZen from the source code.
+Follow these steps to install **ConeZen** from the source code.
 
 ### Clone the Repository
 
@@ -62,7 +62,7 @@ conda activate conezen_env
 ```
 ### Install the Package
 
-Finally, install ConeZen and all its required dependencies using pip. The . tells pip to install the package located in the current directory.
+Finally, install **ConeZen** and all its required dependencies using pip. The . tells pip to install the package located in the current directory.
 
 ```
 # Install ConeZen
@@ -70,7 +70,7 @@ pip install build
 pip install .
 
 ````
-That's it! ConeZen is now installed in your environment and ready to use.
+That's it! **ConeZen** is now installed in your environment and ready to use.
 
 ### System Dependencies (Required for Animations)
 
@@ -90,12 +90,10 @@ brew install ffmpeg
 sudo apt-get install ffmpeg
 ```
 
-### Usage
-**ConeZen** can be run in two ways: through the command line or as a Python library.
 
 ---
 ## Usage
-ConeZen can be run in two ways: through the command line or as a Python library.
+**ConeZen** can be run in two ways: through the command line or as a Python library.
 
 ## 1. Command-Line Interface (CLI)
 The easiest way to use ConeZen is to run it from your terminal. Running conezen initiates a user-friendly, step-by-step process. The tool will first request the file paths for the gradients of the two electronic states, the nonadiabatic coupling vector, and the molecular geometry. It then interactively prompts for plotting and saving options.

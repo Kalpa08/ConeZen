@@ -44,7 +44,7 @@ The package implements the first-order analytical model described by Fdez. Galv√
 Using this basis, ConeZen computes several topological descriptors:
 
 - **Pitch** ($\delta_{gh}$): average energetic slope.
-- **Asymmetry** $\Delta_{gh}$: ellipticity of the cone.
+- **Asymmetry** ($\Delta_{gh}$): ellipticity of the cone.
 - **Tilt** $\sigma and **tilt heading** $\theta_s: define the slope of the average PES.
 
 The energy surfaces \(E(r, \theta)\) of the two intersecting states are computed using the analytical expression:

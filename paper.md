@@ -23,7 +23,7 @@ bibliography: paper.bib
 
 # Summary
 
-Conical intersections (CIs) are regions of electronic state degeneracy that act as efficient funnels for non-radiative decay, governing the outcomes of many photochemical processes [@Yarkony2001] \cite{Yarkony2001, Nelson2020}. Understanding the mechanism requires characterization of the potential energy surfaces (PES) in the branching plane around the CI.
+Conical intersections (CIs) are regions of electronic state degeneracy that act as efficient funnels for non-radiative decay, governing the outcomes of many photochemical processes `[@Yarkony2001]` , `@Nelson2020` Understanding the mechanism requires characterization of the potential energy surfaces (PES) in the branching plane around the CI.
 
 We present **ConeZen**, an open-source Python package that computes and visualizes the two-dimensional PES near a conical intersection. ConeZen is available on the Python Package Index (PyPI) and provides a command-line interface for user-friendly operation. It automates the entire workflow from input parsing (e.g., from SHARC/OpenMolcas) to 3D visualization, helping researchers understand CI topographies without manual post-processing.
 

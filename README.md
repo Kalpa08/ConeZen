@@ -49,14 +49,14 @@ Built on a small, robust stack of standard scientific libraries (NumPy, Pandas, 
 
 Follow these steps to install **ConeZen** from the source code.
 
-### Clone the Repository
+### 1. Clone the Repository
 
 First, clone the repository to your local machine and navigate into the directory.
 ```
 git clone https://github.com/Kalpa08/ConeZen.git
 cd ConeZen
 ```
-### Create a Conda Environment
+### 2. Create a Conda Environment
 
 It's recommended to create a dedicated environment to manage dependencies. The following commands will create and activate a new environment named 
 ```conezen_env``` with ```Python 3.11```.
@@ -66,7 +66,7 @@ It's recommended to create a dedicated environment to manage dependencies. The f
 conda create --name conezen_env python=3.11
 conda activate conezen_env 
 ```
-### Install the Package
+### 3. Install the Package
 
 Finally, install **ConeZen** and all its required dependencies using pip. The . tells pip to install the package located in the current directory.
 

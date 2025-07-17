@@ -216,13 +216,13 @@ Coordinates from ORCA-job orca
  H   -1.55677664790204     -0.76202298903129      0.52236315843451
  ...
 ```
-### 📤 Output
+## 📤 Output
 The CLI tool can generate several useful output files in your working directory:
 - ```ci_parameters.txt```: A text file containing the calculated topological quantities ($\delta_{gh}$, $$\Delta_{gh}$$ , σ , $\theta_s$). This provides a quick human-readable summary of the CI's characters.
 - ```x_vectors.out```, ```y_vectors.out```:  The orthonormal branching plane vectors $\hat{x}$ and $\hat{y}$.
 - ```conical_intersection.png```: A high-resolution image of the 3D plot. The plot is saved with a transparent background and tight bounding box, making it easy to incorporate into other documents.
 
-# 🧾 Citing ConeZen
+## 🧾 Citing ConeZen
 
 If you use ConeZen in your research, please cite the accompanying paper. Your citation allows us to track the software's impact and helps support its continued development.
 

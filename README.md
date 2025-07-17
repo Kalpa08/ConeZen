@@ -28,15 +28,15 @@ Computes key CI descriptors:
 	This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating. 
 
 -**High-Quality Visualization**
- Generates publication-ready 3D surface plots using Matplotlib. The plots are fully customizable and can be exported in various high-resolution formats (PNG, PDF, SVG) for direct inclusion in presentations and publications.  
+Generates publication-ready 3D surface plots using Matplotlib. The plots are fully customizable and can be exported in various high-resolution formats (PNG, PDF, SVG) for direct inclusion in presentations and publications.  
 -**Animations**
- Creates animated GIFs or MP4s showing a 360° rotation of the 3D surface. These are especially useful for presentations and for gaining a more intuitive feel for the three-dimensional structure of the potential energy surfaces around the degeneracy.  
+Creates animated GIFs or MP4s showing a 360° rotation of the 3D surface. These are especially useful for presentations and for gaining a more intuitive feel for the three-dimensional structure of the potential energy surfaces around the degeneracy.  
 
 -**Dual Interface**
- Offers both an easy-to-use interactive Command-Line Interface (CLI) and an importable Python library (API). This provides flexibility for both quick, interactive analyses and more complex, scripted workflows or integration into larger computational chemistry pipelines. 
+Offers both an easy-to-use interactive Command-Line Interface (CLI) and an importable Python library (API). This provides flexibility for both quick, interactive analyses and more complex, scripted workflows or integration into larger computational chemistry pipelines. 
 
 - **Minimal Dependencies**
- Built on a small, robust stack of standard scientific libraries (NumPy, Pandas, Matplotlib), making installation straightforward and avoiding dependency conflicts.
+- Built on a small, robust stack of standard scientific libraries (NumPy, Pandas, Matplotlib), making installation straightforward and avoiding dependency conflicts.
 
 ---
 
@@ -58,10 +58,10 @@ pip install conezen
 For creating MP4 animations, you will also need to have FFmpeg installed and available in your system's PATH.
 
 ---
-Usage
+## Usage
 ConeZen can be run in two ways: through the command line or as a Python library.
 
-# 1. Command-Line Interface (CLI)
+## 1. Command-Line Interface (CLI)
 The easiest way to use ConeZen is to run it from your terminal. Running conezen initiates a user-friendly, step-by-step process. The tool will first request the file paths for the gradients of the two electronic states, the nonadiabatic coupling vector, and the molecular geometry. It then interactively prompts for plotting and saving options.
 
 ```
@@ -88,7 +88,7 @@ Show 3D surface plot now? [y/n]: y
 
 ```
 
-2. Python API
+## 2. Python API
 You can also import ConeZen into your own Python scripts or a Jupyter Notebook for more advanced workflows. This gives you direct access to the underlying data structures and plotting functions for custom analysis.
 
 Here is a basic example with detailed comments:
@@ -129,7 +129,7 @@ plt.show()
 # fig.savefig("my_intersection.pdf", dpi=300, bbox_inches='tight')
 ```
 
-##Input File Format
+## Input File Format
 
 ConeZen expects simple text files for the gradients, nonadiabatic coupling (NAC) vectors, and geometry. The format is designed for easy generation from post-processing scripts and is directly compatible with output from programs like SHARC-OpenMolcas.
 
@@ -160,7 +160,7 @@ Coordinates from ORCA-job orca
 The CLI tool can generate several useful output files in your working directory:
 - ci_parameters.txt: A text file containing the calculated topological quantities ($\delta{gh}$,$\Delta{gh}$, $\sigma$, $\theta_s$). This provides a quick human-readable summary of the CI's characters.
 - x_vectors.out, y_vectors.out:  The orthonormal branching plane vectors ( $\x{hat}$ and {\y{hat}}}.
--conical_intersection.png: A high-resolution image of the 3D plot. The plot is saved with a transparent background and tight bounding box, making it easy to incorporate into other documents.
+- conical_intersection.png: A high-resolution image of the 3D plot. The plot is saved with a transparent background and tight bounding box, making it easy to incorporate into other documents.
 
 # Citing ConeZen
 

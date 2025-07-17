@@ -9,7 +9,7 @@
 <p align="center"><i>Visualiser for Conical Intersection Branching Planes</i></p>
 
 ---
-## ConeZen 🌀: Conical Intersection Branching Plane Visualization
+## Conical Intersection Branching Plane Visualization
 
 **ConeZen** is a lightweight, open-source Python package designed to characterize and visualize the branching plane topology at a conical intersection (CI). The shape and orientation of a CI's potential energy surfaces dictate the pathways for ultrafast, non-radiative electronic transitions, which are fundamental to processes like vision, photosynthesis, and DNA photostability.
 

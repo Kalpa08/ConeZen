@@ -27,8 +27,8 @@ Using output from standard quantum chemistry programs (tested on SHARC-OpenMolca
 
 - **Automated Analysis**  
 	Computes key CI descriptors:  
- 	- The strength or pitch ( $\delta{gh}$ )  
- 	- The asymmetry ( $$\Delta{gh}$$ )  
+ 	- The strength or pitch ( $\delta_{gh}$ )  
+ 	- The asymmetry ( $$\Delta_{gh}$$ )  
  	- The relative tilt and tilt heading ( σ ), $\theta_s$ respectively.   
 This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating.   
 

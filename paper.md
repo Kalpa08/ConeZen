@@ -29,7 +29,7 @@ We present **ConeZen**, an open-source Python package that computes and visualiz
 
 # Statement of need
 
-Nonadiabatic transitions via CIs are central to excited-state molecular dynamics \cite{Boggio-Pasqua2015}. While quantum chemistry software such as SHARC-OpenMolcas `@Mai2016` can compute the state gradients and nonadiabatic coupling (NAC) vectors required to describe a CI, these tools do not offer a direct way to visualize the topography or interpret the physical implications.
+Nonadiabatic transitions via CIs are central to excited-state molecular dynamics. While quantum chemistry software such as SHARC-OpenMolcas `@Mai2016` can compute the state gradients and nonadiabatic coupling (NAC) vectors required to describe a CI, these tools do not offer a direct way to visualize the topography or interpret the physical implications.
 
 ConeZen bridges this gap by processing vector data and rendering meaningful visualizations and quantitative metrics. These include slope, asymmetry, and cone tilts that are essential for determining if a CI is peaked, sloped, bifurcating, or single-path `@Galvan2022`, `@Cuellar-Zuquin2023`.
 

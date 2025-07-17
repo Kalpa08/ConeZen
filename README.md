@@ -131,36 +131,47 @@ Here is a basic example with detailed comments:
 import numpy as np
 import matplotlib.pyplot as plt
 import conezen as cz
+from pathlib import Path
+from conezen.logic import load_vector_file
 
-# 1. Load your data.
-# In a real case, you would load these from your quantum chemistry output files
-# using a function like `numpy.loadtxt`. The vectors should be flattened
-# into 1D arrays before being passed to ConeZen.
-grad_A = np.random.rand(90)
-grad_B = np.random.rand(90)
-h_ab = np.random.rand(90)
-E_X = -105.5  # Energy of the CI point in Hartree
 
-# 2. Compute the branching plane vectors and topological parameters.
+#  1 Use the specialized load_vector_file function.
+#    This function skips the non-numeric header in your files.
+#    Do NOT use np.loadtxt.
+grad_A_data, _ = load_vector_file(Path('gradientA.out'))
+grad_B_data, _ = load_vector_file(Path('gradientB.out'))
+h_ab_data, _ =  load_vector_file(Path('NAC.out'))
+
+# 2. Flatten the arrays to the required 1D shape.
+grad_A = grad_A_data.flatten()
+grad_B = grad_B_data.flatten()
+h_ab = h_ab_data.flatten()
+
+E_X = 0  # Energy of the CI point in Hartree
+
+# 3. Compute the branching plane vectors and topological parameters.
 # This function returns a dictionary containing the calculated quantities.
 params = cz.get_branching_plane_vectors(grad_A, grad_B, h_ab)
 
 # The `params` dictionary contains: 'x_hat', 'y_hat', 'del_gh',
 # 'delta_gh', 'sigma', and 'theta_s_rad'.
 print(f"Asymmetry (Δ_gh): {params['delta_gh']:.4f}")
+print(f"Pitch (δ_gh): {params['del_gh']:.4f}")
 print(f"Tilt (σ): {params['sigma']:.4f}")
+print(f"theta_s (θs): {np.degrees(params['theta_s_rad']):.4f}")
 
-# 3. Compute the potential energy surfaces for plotting.
+
+# 4. Compute the potential energy surfaces for plotting.
 # This function generates the mesh grid and calculates the energy of the
 # upper (E_A) and lower (E_B) surfaces at each point.
 X, Y, E_A, E_B, _ = cz.compute_surfaces(params, E_X)
 
-# 4. Plot the surfaces using the built-in plotting function.
-fig, ax = cz.plot_surfaces(X, Y, E_A, E_B, title="My Conical Intersection")
+# 5. Plot the surfaces using the built-in plotting function.
+fig, ax = cz.plot_surfaces(X, Y, E_A, E_B, fig_width=8, fig_height=6, title="My Conical Intersection")
 plt.show()
 
 # You can also save the figure to a file for publications.
-# fig.savefig("my_intersection.pdf", dpi=300, bbox_inches='tight')
+#fig.savefig("my_intersection.pdf", dpi=300, bbox_inches='tight')
 ```
 
 ## Input File Format

@@ -19,23 +19,23 @@ Using output from standard quantum chemistry programs (tested on SHARC-OpenMolca
 
 ## ✨ Key Features
 
--**Automated Analysis**
-Computes key CI descriptors:
-	-the average slope or pitch ( $\delta{gh}$ )
-	-the cone ellipticity or asymmetry ($\Delta{gh}$)
-	-the overall tilt magnitude and direction ($\sigma$), $\theta_s$. 
-	This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating. 
+-**Automated Analysis**  
+Computes key CI descriptors:  
+	-the average slope or pitch ( $\delta{gh}$ )  
+	-the cone ellipticity or asymmetry ($\Delta{gh}$)  
+	-the overall tilt magnitude and direction ($\sigma$), $\theta_s$.   
+	This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating.   
 
--**High-Quality Visualization**
+-**High-Quality Visualization**  
 Generates publication-ready 3D surface plots using Matplotlib. The plots are fully customizable and can be exported in various high-resolution formats (PNG, PDF, SVG) for direct inclusion in presentations and publications.  
--**Animations**
+-**Animations**  
 Creates animated GIFs or MP4s showing a 360° rotation of the 3D surface. These are especially useful for presentations and for gaining a more intuitive feel for the three-dimensional structure of the potential energy surfaces around the degeneracy.  
 
--**Dual Interface**
-Offers both an easy-to-use interactive Command-Line Interface (CLI) and an importable Python library (API). This provides flexibility for both quick, interactive analyses and more complex, scripted workflows or integration into larger computational chemistry pipelines. 
+-**Dual Interface**  
+Offers both an easy-to-use interactive Command-Line Interface (CLI) and an importable Python library (API). This provides flexibility for both quick, interactive analyses and more complex, scripted workflows or integration into larger computational chemistry pipelines.   
 
-- **Minimal Dependencies**
-- Built on a small, robust stack of standard scientific libraries (NumPy, Pandas, Matplotlib), making installation straightforward and avoiding dependency conflicts.
+- **Minimal Dependencies**  
+- Built on a small, robust stack of standard scientific libraries (NumPy, Pandas, Matplotlib), making installation straightforward and avoiding dependency conflicts.  
 
 ---
 

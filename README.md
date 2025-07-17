@@ -1,4 +1,3 @@
-# 🌀 ConeZen
 
 <p align="center">
   <img src="logo6.svg" alt="ConeZen Logo" width="300"/>

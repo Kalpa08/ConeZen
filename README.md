@@ -101,7 +101,7 @@ sudo apt-get install ffmpeg
 ## 🧪 Usage
 **ConeZen** can be run in two ways: through the command line or as a Python library.
 
-## 1. Command-Line Interface (CLI)
+### 1. Command-Line Interface (CLI)
 The easiest way to use ConeZen is to run it from your terminal. Running conezen initiates a user-friendly, step-by-step process. The tool will first request the file paths for the gradients of the two electronic states, the nonadiabatic coupling vector, and the molecular geometry. It then interactively prompts for plotting and saving options.
 
 ```
@@ -128,7 +128,7 @@ Show 3D surface plot now? [y/n]: y
 
 ```
 
-## 2. Python API
+### 2. Python API
 You can also import ConeZen into your own Python scripts or a Jupyter Notebook for more advanced workflows. This gives you direct access to the underlying data structures and plotting functions for custom analysis.
 
 Here is a basic example with detailed comments:

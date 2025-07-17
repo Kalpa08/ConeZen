@@ -41,7 +41,7 @@ Creates animated GIFs or MP4s showing a 360° rotation of the 3D surface. These 
 Offers both an easy-to-use interactive Command-Line Interface (CLI) and an importable Python library (API). This provides flexibility for both quick, interactive analyses and more complex, scripted workflows or integration into larger computational chemistry pipelines.   
 
 - **Minimal Dependencies**  
-- Built on a small, robust stack of standard scientific libraries (NumPy, Pandas, Matplotlib), making installation straightforward and avoiding dependency conflicts.  
+Built on a small, robust stack of standard scientific libraries (NumPy, Pandas, Matplotlib), making installation straightforward and avoiding dependency conflicts.  
 
 ---
 

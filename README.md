@@ -8,7 +8,6 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3.0"></a>
-  <a href="https://github.com/Kalpa08/ConeZen/releases"><img src="https://img.shields.io/github/v/release/Kalpa08/ConeZen" alt="GitHub release"></a>
   <a href="#"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python Version"></a>
   <a href="https://doi.org/10.xxxx/zenodo.xxxxx"><img src="https://zenodo.org/badge/DOI/10.xxxx/zenodo.xxxxx.svg" alt="DOI"></a>
 </p>

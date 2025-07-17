@@ -29,17 +29,17 @@ We present **ConeZen**, an open-source Python package that computes and visualiz
 
 # Statement of need
 
-Nonadiabatic transitions via CIs are central to excited-state molecular dynamics \cite{Boggio-Pasqua2015}. While quantum chemistry software such as SHARC-OpenMolcas \cite{Mai2016} can compute the state gradients and nonadiabatic coupling (NAC) vectors required to describe a CI, these tools do not offer a direct way to visualize the topography or interpret the physical implications.
+Nonadiabatic transitions via CIs are central to excited-state molecular dynamics \cite{Boggio-Pasqua2015}. While quantum chemistry software such as SHARC-OpenMolcas `@Mai2016` can compute the state gradients and nonadiabatic coupling (NAC) vectors required to describe a CI, these tools do not offer a direct way to visualize the topography or interpret the physical implications.
 
-ConeZen bridges this gap by processing vector data and rendering meaningful visualizations and quantitative metrics. These include slope, asymmetry, and cone tilts that are essential for determining if a CI is peaked, sloped, bifurcating, or single-path \cite{Galvan2022, Cuellar-Zuquin2023}.
+ConeZen bridges this gap by processing vector data and rendering meaningful visualizations and quantitative metrics. These include slope, asymmetry, and cone tilts that are essential for determining if a CI is peaked, sloped, bifurcating, or single-path `@Galvan2022`, `@Cuellar-Zuquin2023`.
 
 The program serves a broad range of theoretical chemists by standardizing CI visualization with minimal user effort, enabling reproducibility, and lowering the entry barrier for new researchers.
 
 # Implementation
 
-ConeZen is written in Python 3 and built on standard scientific libraries including **NumPy** \cite{harris2020array}, **Pandas** \cite{mckinney-proc-scipy-2010}, and **Matplotlib** \cite{Hunter:2007}.
+ConeZen is written in Python 3 and built on standard scientific libraries including **NumPy** `@harris2020array`, **Pandas** `mckinney-proc-scipy-2010`, and **Matplotlib** `@Hunter:2007`.
 
-The package implements the first-order analytical model described by Fdez. Galván et al. \cite{Galvan2016}, which uses two input vectors: the gradient difference vector $$g^{AB}$$ and the nonadiabatic coupling vector $$h^{AB}$$. These are orthogonalized and normalized to generate a local basis ( $$\hat{x}$$, $$\hat{y}$$ ) for the branching plane.
+The package implements the first-order analytical model described by Fdez. Galván et al. `@Galvan2016`, which uses two input vectors: the gradient difference vector $$g^{AB}$$ and the nonadiabatic coupling vector $$h^{AB}$$. These are orthogonalized and normalized to generate a local basis ( $$\hat{x}$$, $$\hat{y}$$ ) for the branching plane.
 
 Using this basis, ConeZen computes several topological descriptors:
 

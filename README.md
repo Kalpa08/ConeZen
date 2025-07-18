@@ -245,6 +245,11 @@ Zenodo DOI: [Zenodo DOI will go here]
 ```
 
 ---
+### 🙏 Acknowledgments
+
+Developed as part of my Ph.D. research at *Banaras Hindu University (BHU)*.
+
+Special thanks to **Prof. Biswajit Maiti** and **Dr. Sebastian** for their guidance and support.
 
 ## ⚖️ License
 

@@ -30,7 +30,7 @@ Using output from standard quantum chemistry programs (tested on SHARC-OpenMolca
   - **Topological Analysis**  Computes key CI descriptors from the vector data:  
  	- The strength or pitch ( $\delta_{gh}$ )  
  	- The asymmetry ( $$\Delta_{gh}$$ )  
- 	- The relative tilt and tilt heading ( σ ), $\theta_s$ respectively.   
+ 	- The relative tilt and tilt heading $$\sigma$$ , $\theta_s$ respectively.   
 This saves researchers from tedious manual calculations and allows for rapid classification of CIs as peaked, sloped, single-path, or bifurcating.   
 
 - **High-Quality Visualization**  

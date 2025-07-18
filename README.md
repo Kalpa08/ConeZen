@@ -216,10 +216,7 @@ plt.show()
 ConeZen can now work directly with QM.out files from SHARC-OpenMolcas, but it also supports manually prepared text files.
 - Source Quantum Chemistry File (`QM.out`):
 	-  This is the primary input for the new automated workflow.
- 	-  ConeZen searches this file for the specific headers corresponding to the requested electronic states (e.g., m1 1 s1 3 ms1 0 for the S2 gradient) to extract gradient and NAC vectors.
-  -  
-
-ConeZen expects simple text files for the gradients, nonadiabatic coupling (NAC) vectors, and geometry. The format is designed for easy generation from post-processing scripts and is directly compatible with output from programs like SHARC-OpenMolcas.
+ 	-  ConeZen searches this file for the specific headers corresponding to the requested electronic states (e.g., m1 1 s1 3 ms1 0 for the S2 gradient) to extract gradient and NAC vectors. 
 
 - Gradient and NAC Files (```gradientA.out```, ```gradientB.out```, ```NAC.out```):
 	- These files are generated automatically when using the extraction workflow or can be provided manually.

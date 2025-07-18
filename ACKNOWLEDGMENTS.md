@@ -1,6 +1,6 @@
 # 📌 Acknowledgments
 
-**ConeZen** was developed as part of my Ph.D. research at *Banaras Hindu University (BHU)*.
+**ConeZen** was developed as part of my Ph.D. work at *Banaras Hindu University (BHU)*.
 
 - 👨‍🏫 Special thanks to Prof. Biswajit Maiti for his scientific mentorship and continuous support.
 

@@ -1,0 +1,43 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conezen"
+version = "1.0.0"
+authors = [
+  { name="Kalpajyoti Dihingia" },
+]
+description = "A visualiser for Conical Intersection Branching Planes."
+readme = "README.md"
+license = { text = "GPL-3.0-or-later" } # Modern SPDX identifier
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Environment :: Console",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "Pillow",
+]
+
+[project.scripts]
+conezen = "conezen.cli:main"
+
+# Tells setuptools to find the package inside the 'src' directory
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# Optional dependencies for development and testing
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+

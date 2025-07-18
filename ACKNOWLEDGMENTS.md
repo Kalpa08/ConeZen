@@ -1,7 +1,9 @@
-# Acknowledgments
+# 📌 Acknowledgments
 
-ConeZen was developed as part of my PhD research at Banaras Hindu University (BHU).
+**ConeZen** was developed as part of my Ph.D. research at *Banaras Hindu University (BHU)*.
 
-Special thanks to **Prof. Biswajit Maiti** for scientific mentorship  and **Dr. Sebastian** for generous technical guidance and discussion.
+- 👨‍🏫 Special thanks to Prof. Biswajit Maiti for his scientific mentorship and continuous support.
 
-Your support helped make this project possible.
+- 🧪 Grateful to Dr. Sebastian for his generous guidance, technical input, and insightful discussions.
+
+Their support was instrumental in making this project possible.

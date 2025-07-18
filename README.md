@@ -258,7 +258,7 @@ Distributed under the **GNU GPL v3.0**. See the [LICENSE](LICENSE) file for deta
 ---
 
 ## References
-- Based on:  
+
   > Ignacio Fdez. Galván, Mickaël G. Delcey, Thomas Bondo Pedersen, Francesco Aquilante, and Roland Lindh,  
   > "Analytical State-Average Complete-Active-Space Self-Consistent Field Nonadiabatic Coupling Vectors: Implementation with Density-Fitted Two-Electron Integrals",  
   > *J. Chem. Theory Comput.* 2016, **12(8)**, 3636–3653. DOI: [10.1021/acs.jctc.6b00384](https://doi.org/10.1021/acs.jctc.6b00384)

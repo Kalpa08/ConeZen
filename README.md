@@ -257,8 +257,7 @@ Distributed under the **GNU GPL v3.0**. See the [LICENSE](LICENSE) file for deta
 
 ---
 
-- Developed at **Banaras Hindu University (BHU)**
-
+## References
 - Based on:  
   > Ignacio Fdez. Galván, Mickaël G. Delcey, Thomas Bondo Pedersen, Francesco Aquilante, and Roland Lindh,  
   > "Analytical State-Average Complete-Active-Space Self-Consistent Field Nonadiabatic Coupling Vectors: Implementation with Density-Fitted Two-Electron Integrals",  

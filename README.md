@@ -288,7 +288,7 @@ Distributed under the **GNU GPL v3.0**. See the [LICENSE](LICENSE) file for deta
 ---
 ## 🙏 Acknowledgments
 
-- Developed at *Banaras Hindu University (BHU)*.
+- Developed at *Banaras Hindu University, Varanasi, India*.
 - Based on the theoretical framework described in:
   	```J. Chem. Theory Comput. 2016, 12(8), 3636–3653. DOI: 10.1021/acs.jctc.6b00384```
 ---

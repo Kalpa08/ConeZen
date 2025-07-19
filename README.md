@@ -8,10 +8,11 @@
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3.0"></a>
   <a href="#"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python Version"></a>
-  <a href="https://doi.org/10.xxxx/zenodo.xxxxx"><img src="https://zenodo.org/badge/DOI/10.xxxx/zenodo.xxxxx.svg" alt="DOI"></a>
+  <a href="https://doi.org/10.5281/zenodo.16161336"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16161336.svg" alt="DOI"></a>
 </p>
 
 <p align="center"><i>Visualiser for Conical Intersection Branching Planes</i></p>
+
 
 
 ---
@@ -262,11 +263,7 @@ The CLI tool can generate several useful output files in your working directory:
 
 If you use ConeZen in your research, please cite the accompanying paper. Your citation allows us to track the software's impact and helps support its continued development.
 
-```
-To be updated
-Zenodo DOI: [Zenodo DOI will go here]
 
-```
 
 ```bibtex
 @software{conezen,
@@ -275,7 +272,7 @@ Zenodo DOI: [Zenodo DOI will go here]
   year    = 2025,
   publisher = {Zenodo},
   version = {v1.0},
-  doi     = {10.xxxx/zenodo.xxxxx}
+  doi     = 10.5281/zenodo.16161336
 }
 ```
 

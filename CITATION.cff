@@ -1,10 +1,18 @@
-cff-version: 0.1.0
-message: "If you use this software, please cite it as below."
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: ConeZen
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
-- family-names: Dihingia
-  given-names: Kalpajyoti
-orcid: https://orcid.org/0009-0006-1147-609X
-title:
-version: v0.1-beta
-date-released: 2025-07-19
+  - given-names: 'Kalpajyoti '
+    family-names: Dihingia
+    email: dihingiakalpa@gmail.com
+    name-particle: Kalpajyoti
+    affiliation: Banaras HIndu University
+    orcid: 'https://orcid.org/0009-0006-1147-609X'
+
                                

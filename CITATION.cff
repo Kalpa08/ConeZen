@@ -1,31 +1,10 @@
 cff-version: 1.1.0
-message: "If you use this script, please cite it as below."
-title: "ConeZen: Visualiser for Conical Intersection Branching Planes"
-version: "1.0.0"
-doi: "10.5281/zenodo.YOUR_DOI_HERE"
-date-released: "2025-07-14"
+message: "If you use this software, please cite it as below."
 authors:
-  - family-names: "Dihingia"
-    given-names: "Kalpajyoti"
-    orcid: "https://orcid.org/0009-0006-1147-609X"
-    affiliation: "Banaras Hindu University (BHU)"
-license: "GPL-3.0"
-repository-code: "https://github.com/Kalpa08/conezen"
-url: "https://github.com/Kalpa08/conezen"
-abstract: |
-  ConeZen is a Python script to visualise the topology of conical intersection
-  branching planes using input gradients and NAC vectors. It implements
-  key theoretical models derived from the literature, and helps generate
-  3D plots and animations of the conical intersection surfaces.
-  This tool was developed as part of Kalpa Dihingia's doctoral research
-  under the guidance of Banaras Hindu University (BHU).
-
-preferred-citation:
-  type: software
-  authors:
-    - family-names: "Dihingia"
-      given-names: "Kalpajyoti"
-  title: "ConeZen: Visualiser for Conical Intersection Branching Planes"
-  version: v0.1-beta
-  doi: "10.5281/zenodo.YOUR_DOI_HERE"
-  date-released: 2025-07-19
+- family-names: Dihingia
+  given-names: Kalpajyoti
+orcid: https://orcid.org/0009-0006-1147-609X
+title:
+version: v0.1-beta
+date-released: 2025-07-19
+                               

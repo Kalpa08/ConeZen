@@ -23,29 +23,27 @@ bibliography: paper.bib
 
 # Summary
 
-Conical intersections (CIs) are regions of electronic state degeneracy that act as efficient funnels for non-radiative decay, governing the outcomes of many photochemical processes `[@Yarkony2001` , `@Nelson2020]`, Understanding the mechanism requires characterization of the potential energy surfaces (PES) in the branching plane around the CI.
+Conical intersections (CIs) are regions of electronic state degeneracy that act as efficient funnels for non-radiative decay, governing the outcomes of many photochemical processes, from the photostability of DNA to the mechanism of vision `[@Yarkony2001` , `@Nelson2020]`. They act as highly efficient funnels for ultrafast, non-radiative transitions between potential energy surfaces (PESs). A complete mechanistic understanding requires characterizing the topography of the PESs in the two-dimensional "branching plane" where the degeneracy is lifted [@Galvan2016]. However, interpreting the raw numerical data (state gradients and coupling vectors) produced by quantum chemistry software is a significant challenge.
 
-We present **ConeZen**, an open-source Python package that computes and visualizes the two-dimensional PES near a conical intersection. ConeZen is available on the Python Package Index (PyPI) and provides a command-line interface for user-friendly operation. It automates the entire workflow from input parsing (e.g., from SHARC/OpenMolcas) to 3D visualization, helping researchers understand CI topographies without manual post-processing.
+We present **ConeZen** , an open-source Python package designed to bridge this gap. ConeZen automates the entire workflow from parsing the output of quantum chemistry packages (e.g., SHARC-OpenMolcas [@Galvan2019]) to the generation of quantitative topological descriptors and intuitive 3D visualizations. By providing a user-friendly command-line interface (CLI) and a flexible API, ConeZen allows researchers to rapidly characterize and visualize CI topographies, facilitating a deeper understanding of nonadiabatic reaction dynamics.
 
 # Statement of need
 
-Nonadiabatic transitions via CIs are central to excited-state molecular dynamics. While quantum chemistry software such as SHARC-OpenMolcas `@Mai2016` can compute the state gradients and nonadiabatic coupling (NAC) vectors required to describe a CI, these tools do not offer a direct way to visualize the topography or interpret the physical implications.
+The study of nonadiabatic dynamics is central to modern computational photochemistry. While powerful software packages like SHARC-OpenMolcas can compute the essential vectors—state gradients and nonadiabatic couplings (NACs)—that describe a CI, they often lack integrated tools for visualizing the resulting PES topography. This forces researchers to engage in manual, often complex and error-prone, post-processing to extract meaningful chemical insight from the raw data. This gap creates a significant barrier to entry for newcomers and slows the pace of research for experienced practitioners.
 
-ConeZen bridges this gap by processing vector data and rendering meaningful visualizations and quantitative metrics. These include slope, asymmetry, and cone tilts that are essential for determining if a CI is peaked, sloped, bifurcating, or single-path `@Galvan2022`, `@Cuellar-Zuquin2023`.
-
-The program serves a broad range of theoretical chemists by standardizing CI visualization with minimal user effort, enabling reproducibility, and lowering the entry barrier for new researchers.
+ConeZen addresses this critical need by providing a standardized, reproducible, and easy-to-use tool for CI analysis. It processes the raw vector data to generate quantitative metrics that are essential for classifying the intersection's character. By calculating the slope, asymmetry, and tilt of the intersecting surfaces, ConeZen allows for an unambiguous classification of a CI as peaked, sloped, bifurcating, or single-path `[@Galvan2022; @Cuellar-Zuquin2023]`. This classification is directly linked to the predicted reaction dynamics, indicating whether a decay process will be highly efficient (peaked) or whether it might lead to a mixture of products (bifurcating). By automating this analysis, ConeZen lowers the barrier to entry, enhances research productivity, and promotes reproducibility in the field of computational photochemistry.
 
 # Implementation
 
-ConeZen is written in Python 3 and built on standard scientific libraries including **NumPy** `@harris2020array`, **Pandas** `@mckinney-proc-scipy-2010`, and **Matplotlib** `@Hunter:2007`.
+ConeZen is a lightweight package written in Python 3. It is built on a minimal stack of robust and widely used scientific libraries: NumPy for numerical operations [@harris2020array], Pandas for data handling [@mckinney-proc-scipy-2010], and Matplotlib for 2D and 3D plotting [@Hunter:2007].
 
-The package implements the first-order analytical model described by Fdez. Galván et al. `@Galvan2016`, which uses two input vectors: the gradient difference vector $$g^{AB}$$ and the nonadiabatic coupling vector $$h^{AB}$$. These are orthogonalized and normalized to generate a local basis ( $$\hat{x}$$, $$\hat{y}$$ ) for the branching plane.
-
-Using this basis, ConeZen computes several topological descriptors:
-
-- **Pitch** ($\delta_{gh}$): average energetic slope.
-- **Asymmetry** ($\Delta_{gh}$): ellipticity of the cone.
-- **Tilt** $$\sigma$$ and **tilt heading** $$\theta_s$$ : define the slope of the average PES.
+The core of the package is an implementation of the first-order analytical model described by Fdez. Galván et al. `@Galvan2016`,. The a;hprotj, proceeds as follow:
+  - **Input Processing:** The tool takes the gradient difference vector $$g^{AB}$$ and the nonadiabatic coupling vector $$h^{AB}$$ as primary inputs
+  - **Orthonormalization:**  It performs a scaling and rotation procedure to transform these two vectors into an orthonormal basis,$$\hat{x}$$ , $$\hat{y}$$ which defines the branching plane.
+  - **Parameter Calculation:** Using this basis, ConeZen computes the key topological descriptors:
+      - Pitch or pitch ($\delta_{gh}$)
+      - Asymmetry ($\Delta_{gh}$)
+      - The relative Tilt and tilt heading $$\sigma$$, $$\theta_s$$ respectively
 
 The energy surfaces $$E(r, \theta)$$ of the two intersecting states are computed using the analytical expression:
 
@@ -53,19 +51,15 @@ $$
 E(r, \theta) = E_{X} + \delta_{gh} \cdot r \left( \sigma \cos(\theta - \theta_s) \pm \sqrt{1 + \Delta_{gh} cos(2 \theta )} \right )
 $$
 
-where $$E_{X}$$ is the energy at the intersection point.
-
-# Example
-
-We demonstrate the application of ConeZen using a benchmark CI from a model system. The necessary gradients and NAC vectors were calculated at the SA-CASSCF level using SHARC–OpenMolcas and provided as input to ConeZen.
-
-The resulting output included a 3D surface plot of the two PES and tabulated parameters identifying the CI as *sloped bifurcating*, consistent with earlier reports.
-
-> **Figure 1**: 3D plot of potential energy surfaces for a conical intersection in *[Molecule Name]*. The double-cone structure is evident.
+where 
+    - $$E_{X}$$ is the energy at the intersection point.
+    - $$r$$ and $$\theta$$ are polar coordinates 
 
 # Acknowledgements
 
-This work was developed at Banaras Hindu University (BHU). The authors thank Prof. Biswajit Maiti for valuable discussions and scientific guidance.
+The authors acknowledge support from Banaras Hindu University (BHU) and the Science and Engineering Research Board (SERB), India.
 
 # References
+
+
 

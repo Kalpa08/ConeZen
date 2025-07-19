@@ -20,7 +20,7 @@
   "related_identifiers": [
     {
       "relation": "isSupplementTo",
-      "identifier": "doi:10.xxxx/your-paper-doi"  // Replace with your paper’s DOI when known
+      "identifier": "doi:10.xxxx/your-paper-doi"  
     }
   ]
 }

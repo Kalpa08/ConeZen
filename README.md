@@ -271,7 +271,7 @@ If you use ConeZen in your research, please cite the accompanying paper. Your ci
   title   = {ConeZen: Visualiser for conical intersection branching planes},
   year    = 2025,
   publisher = {Zenodo},
-  version = {v1.0},
+  version = {v0.1.4},
   doi     = 10.5281/zenodo.16161336
 }
 ```

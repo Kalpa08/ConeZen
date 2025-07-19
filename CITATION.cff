@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+cff-version: 1.1.0
 message: "If you use this script, please cite it as below."
 title: "ConeZen: Visualiser for Conical Intersection Branching Planes"
 version: "1.0.0"
@@ -26,6 +26,6 @@ preferred-citation:
     - family-names: "Dihingia"
       given-names: "Kalpajyoti"
   title: "ConeZen: Visualiser for Conical Intersection Branching Planes"
-  version: "1.0.0"
+  version: v0.1-beta
   doi: "10.5281/zenodo.YOUR_DOI_HERE"
-  date-released: "2025-07-14"
+  date-released: 2025-07-19

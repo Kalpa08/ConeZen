@@ -116,8 +116,8 @@ def print_about():
     lines = [
         "="*60, "ConeZen: Conical Intersection Branching Plane Visualization", "="*60,
         "📄  Citation:", "    If you use ConeZen in your published work, please cite:",
-        "    Kalpa Dihingia, ConeZen: Visualiser for Conical Intersection Branching Planes,",
-        "    Zenodo DOI: [add your DOI here once minted]", "",
+        "    Kalpajyoti Dihingia, Biswajit Maiti, ConeZen: Visualiser for Conical Intersection Branching Planes,",
+        "    Zenodo DOI: 10.5281/zenodo.16161336", "",
         "🔬  Generates a 3D model of potential energy surfaces near a CI.", "",
         "✏️  Author: Kalpa Dihingia", "🏛️  Institute: Banaras Hindu University (BHU)", "",
         "🔗  License: GPLv3. Please cite the relevant paper if used.", "="*60,

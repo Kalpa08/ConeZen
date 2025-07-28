@@ -1,18 +1,43 @@
 # This CITATION.cff file was generated with cffinit.
 # Visit https://bit.ly/cffinit to generate yours today!
 
-cff-version: 0.1.2
-title: ConeZen
-message: >-
-  If you use this software, please cite it using the
-  metadata from this file.
+cff-version: 1.2.0
+title: Conezen
+message: For the visualization and analysis of conical intersection
 type: software
 authors:
   - given-names: 'Kalpajyoti '
     family-names: Dihingia
     email: dihingiakalpa@gmail.com
     name-particle: Kalpajyoti
-    affiliation: Banaras HIndu University
+    affiliation: Banaras Hindu University
     orcid: 'https://orcid.org/0009-0006-1147-609X'
-
-                               
+  - given-names: Biswajit
+    family-names: Maiti
+    name-particle: Biswajit
+    email: bmaitibhu@gmail.com
+    affiliation: Banaras Hindu University
+    orcid: 'https://orcid.org/0000-0002-5018-5889'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.16162669
+repository-code: >-
+  https://github.com/Kalpa08/ConeZen/tree/main?tab=readme-ov-file
+abstract: >-
+  ConeZen is an open-source Python package for the
+  characterization and visualization of conical intersection
+  (CI) seams. It processes output from quantum chemistry
+  programs to compute key topological descriptors and
+  generate intuitive 3D potential energy surfaces, aiding in
+  the analysis of photochemical reaction pathways.
+keywords:
+  - Conical intersection
+  - Nonadiabatic dynamics
+  - SHARC
+  - OpenMolcas
+  - internal conversion
+  - excited state
+  - photodissociation
+license: GPL-3.0
+version: v0.1.5
+date-released: '2025-07-28'

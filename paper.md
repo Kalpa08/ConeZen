@@ -33,8 +33,6 @@ The study of nonadiabatic dynamics is central to modern computational photochemi
 
 ConeZen addresses this critical need by providing a standardized, reproducible, and easy-to-use tool for CI analysis. It processes the raw vector data to generate quantitative metrics that are essential for classifying the intersection's character. By calculating the slope, asymmetry, and tilt of the intersecting surfaces, ConeZen allows for an unambiguous classification of a CI as peaked, sloped, bifurcating, or single-path. This classification is directly linked to the predicted reaction dynamics, indicating whether a decay process will be highly efficient (peaked) or whether it might lead to a mixture of products (bifurcating). By automating this analysis, ConeZen lowers the barrier to entry, enhances research productivity, and promotes reproducibility in the field of computational photochemistry.
 
-# Implementation
-
 
 
 # Acknowledgements

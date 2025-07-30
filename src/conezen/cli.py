@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # conezen/cli.py
 
 import sys
@@ -18,7 +17,7 @@ def _generate_state_headers(num_singlets=20, num_triplets=20):
     """Generates a dictionary mapping common state names to their file header patterns."""
     headers = {}
     for n in range(1, num_singlets + 1):
-        state_name = f"S{n-1}"
+        state_name = f"S{n}"
         headers[state_name] = f"m1 1 s1 {n} ms1 0"
     for n in range(1, num_triplets + 1):
         state_name_base = f"T{n}"
@@ -116,8 +115,8 @@ def print_about():
     lines = [
         "="*60, "ConeZen: Conical Intersection Branching Plane Visualization", "="*60,
         "📄  Citation:", "    If you use ConeZen in your published work, please cite:",
-        "    Kalpajyoti Dihingia, Biswajit Maiti, ConeZen: Visualiser for Conical Intersection Branching Planes,",
-        "    Zenodo DOI: 10.5281/zenodo.16161336", "",
+        "    Kalpa Dihingia, ConeZen: Visualiser for Conical Intersection Branching Planes,",
+        "    Zenodo DOI: [add your DOI here once minted]", "",
         "🔬  Generates a 3D model of potential energy surfaces near a CI.", "",
         "✏️  Author: Kalpa Dihingia", "🏛️  Institute: Banaras Hindu University (BHU)", "",
         "🔗  License: GPLv3. Please cite the relevant paper if used.", "="*60,
@@ -179,73 +178,106 @@ def main():
     try:
         print_about()
 
-        grad_fileA, grad_fileB, nac_file = None, None, None
+        params = None
+        # This variable will hold one of the original vector files (e.g., grad_A or x_hat)
+        # to determine the number of atoms, N, for reshaping arrays later.
+        vector_for_atom_count = None
 
-        if ask_yes_no("(Do you want to automatically extract gradients and NACs from a QM output file? (only for sharc-molcas output QM.out file)"):
-            # --- Integrated Extraction Workflow ---
+        # --- Stage 1: Get parameters via one of three workflows ---
+
+        if ask_yes_no("Do you want to automatically extract gradients and NACs from a QM output file? (sharc-molcas only)"):
+            # --- WORKFLOW 1: Automatic Extraction from QM.out ---
             grad_source_file = get_file("Enter the source QM file name", default="QM.out")
-            
             num_singlets = get_numeric("Enter the total number of singlet states", default=20, type_cast=int)
             num_triplets = get_numeric("Enter the total number of triplet states", default=20, type_cast=int)
-            
             state_headers = _generate_state_headers(num_singlets=num_singlets, num_triplets=num_triplets)
 
             lower_state = get_state_name("Enter the lower state (e.g., S2): ")
             upper_state = get_state_name("Enter the upper state (e.g., S3): ")
-            
-            # Process Lower State (State A)
+
             header_A, grad_A_data = _extract_gradient(grad_source_file, lower_state, state_headers)
             if grad_A_data is not None:
                 grad_fileA = Path(f"{lower_state}_gradient.out")
-                with open(grad_fileA, 'w') as f:
-                    f.write(header_A + '\n')
-                    np.savetxt(f, grad_A_data, fmt='%18.10f')
+                with open(grad_fileA, 'w') as f: f.write(header_A + '\n'); np.savetxt(f, grad_A_data, fmt='%18.10f')
                 print(f"✅ Successfully extracted and saved '{grad_fileA}'")
             else:
-                print(f"❌ Failed to extract gradient for '{lower_state}'. Exiting.")
-                sys.exit(1)
+                print(f"❌ Failed to extract gradient for '{lower_state}'. Exiting."); sys.exit(1)
 
-            # Process Upper State (State B)
             header_B, grad_B_data = _extract_gradient(grad_source_file, upper_state, state_headers)
             if grad_B_data is not None:
                 grad_fileB = Path(f"{upper_state}_gradient.out")
-                with open(grad_fileB, 'w') as f:
-                    f.write(header_B + '\n')
-                    np.savetxt(f, grad_B_data, fmt='%18.10f')
+                with open(grad_fileB, 'w') as f: f.write(header_B + '\n'); np.savetxt(f, grad_B_data, fmt='%18.10f')
                 print(f"✅ Successfully extracted and saved '{grad_fileB}'")
             else:
-                print(f"❌ Failed to extract gradient for '{upper_state}'. Exiting.")
-                sys.exit(1)
+                print(f"❌ Failed to extract gradient for '{upper_state}'. Exiting."); sys.exit(1)
 
-            # Automatically extract NAC vector
             header_NAC, nac_data = _extract_nac_vector(grad_source_file, lower_state, upper_state, state_headers)
             if nac_data is not None:
                 nac_file = Path(f"NAC_{lower_state}_{upper_state}.out")
-                with open(nac_file, 'w') as f:
-                    f.write(header_NAC + '\n')
-                    np.savetxt(f, nac_data, fmt='%18.10f')
+                with open(nac_file, 'w') as f: f.write(header_NAC + '\n'); np.savetxt(f, nac_data, fmt='%18.10f')
                 print(f"✅ Automatically extracted and saved '{nac_file}'")
             else:
-                print(f"❌ Failed to automatically extract NAC vector for {lower_state}-{upper_state}. Please provide it manually.")
+                print(f"❌ Failed to automatically extract NAC vector. Please provide it manually.")
                 nac_file = get_file("Enter the NAC vector file name", default="NAC.out")
 
+            grad_A, skipped_A = logic.load_vector_file(grad_fileA)
+            grad_B, skipped_B = logic.load_vector_file(grad_fileB)
+            h, skipped_h = logic.load_vector_file(nac_file)
+            vector_for_atom_count = grad_A
+            if any([skipped_A, skipped_B, skipped_h]): print(f"⚠️  Skipped malformed lines in one or more input files.")
+            params = logic.get_branching_plane_vectors(grad_A, grad_B, h)
+
         else:
-            # --- Original Workflow ---
-            grad_fileA = get_file("Enter the gradient file name for State A", default="gradientA.out")
-            grad_fileB = get_file("Enter the gradient file name for State B", default="gradientB.out")
-            nac_file = get_file("Enter the NAC vector file name", default="NAC.out")
+            if ask_yes_no("Do you have the raw gradient and non-adiabatic coupling vectors to calculate the parameters?"):
+                # --- WORKFLOW 2: Manual Gradient/NAC files ---
+                grad_fileA = get_file("Enter the gradient file name for State A", default="gradientA.out")
+                grad_fileB = get_file("Enter the gradient file name for State B", default="gradientB.out")
+                nac_file = get_file("Enter the NAC vector file name", default="NAC.out")
 
-        # -- Continue with the rest of the script as before --
-        grad_A, skipped_A = logic.load_vector_file(grad_fileA)
-        grad_B, skipped_B = logic.load_vector_file(grad_fileB)
-        h, skipped_h = logic.load_vector_file(nac_file)
+                grad_A, skipped_A = logic.load_vector_file(grad_fileA)
+                grad_B, skipped_B = logic.load_vector_file(grad_fileB)
+                h, skipped_h = logic.load_vector_file(nac_file)
+                vector_for_atom_count = grad_A
+                if any([skipped_A, skipped_B, skipped_h]): print(f"⚠️  Skipped malformed lines in one or more input files.")
+                params = logic.get_branching_plane_vectors(grad_A, grad_B, h)
 
-        if any([skipped_A, skipped_B, skipped_h]):
-             print(f"⚠️  Skipped malformed lines in one or more input files.")
+            else:
+                # --- WORKFLOW 3: Manual x/y vectors and parameters ---
+                print("\n➡️  Entering manual mode: Provide orthonormal vectors (x_hat, y_hat) and CI parameters directly.")
+                x_vec_file = get_file("Enter the file for the x_hat vector", default="x_vectors.in")
+                y_vec_file = get_file("Enter the file for the y_hat vector", default="y_vectors.in")
 
-        E_X = get_numeric("Enter the energy of the intersection point (Hartree)", default=logic.DEFAULT_EX)
+                x_hat_vec, skipped_x = logic.load_vector_file(x_vec_file)
+                y_hat_vec, skipped_y = logic.load_vector_file(y_vec_file)
+                vector_for_atom_count = x_hat_vec
 
-        params = logic.get_branching_plane_vectors(grad_A, grad_B, h)
+                if skipped_x or skipped_y: print("⚠️  Skipped malformed lines in one or more vector files.")
+                if x_hat_vec.shape != y_hat_vec.shape:
+                    print(f"❌ Error: x_hat ({x_hat_vec.shape}) and y_hat ({y_hat_vec.shape}) vectors have mismatched shapes. Exiting.")
+                    sys.exit(1)
+
+                print("\nPlease enter the conical intersection parameters:")
+                del_gh = get_numeric("Enter del_gh (δ_gh)")
+                delta_gh = get_numeric("Enter delta_gh (Δ_gh)")
+                sigma = get_numeric("Enter sigma (σ)")
+                theta_s_deg = get_numeric("Enter theta_s (θ_s) in degrees")
+                theta_s_rad = np.radians(theta_s_deg)
+
+                params = {
+                    'x_hat': x_hat_vec.flatten(),
+                    'y_hat': y_hat_vec.flatten(),
+                    'del_gh': del_gh,
+                    'delta_gh': delta_gh,
+                    'sigma': sigma,
+                    'theta_s_rad': theta_s_rad
+                }
+
+        # --- Stage 2: Common processing using the 'params' dictionary ---
+
+        if params is None:
+            print("\n❌ A workflow was not completed. Cannot proceed. Exiting.")
+            sys.exit(1)
+
         print("\n" + "="*40)
         print("  Branching Plane Key Quantities")
         print(f"theta_s (θ_s) in degrees: {np.degrees(params['theta_s_rad']):.6f}")
@@ -264,43 +296,30 @@ def main():
                 f.write(f"sigma (σ): {params['sigma']:.6f}\n")
             print(f"✅ Key quantities saved to '{params_path}'\n")
 
-        # --- MODIFIED: Optional XYZ file for atom labels ---
-        N = grad_A.shape[0] # Get number of atoms from the loaded gradient
+        E_X = get_numeric("Enter the energy of the intersection point (Hartree)", default=logic.DEFAULT_EX)
+
+        # --- Stage 3: Output vectors, compute surfaces, plot ---
+
+        N = vector_for_atom_count.shape[0]
         x_hat_2d = params['x_hat'].reshape(N, 3)
         y_hat_2d = params['y_hat'].reshape(N, 3)
 
         if ask_yes_no("Add atom labels from an XYZ file to the output vectors?"):
             xyz_file = get_file("Enter the xyz file name for atom labels", default="orca.xyz")
             atom_list = logic.extract_atom_symbols(xyz_file)
-            
             if len(atom_list) != N:
-                print(f"⚠️  Warning: XYZ file has {len(atom_list)} atoms, but gradient files have {N}. Output may be misaligned.")
-
-            # Save with atom labels
+                print(f"⚠️  Warning: XYZ file has {len(atom_list)} atoms, but vector files have {N}. Output may be misaligned.")
             with open("x_vectors.out", "w") as f:
-                f.write("atoms x y z\n")
-                df = pd.DataFrame(x_hat_2d, columns=['x', 'y', 'z'])
-                df.insert(0, 'Atom', atom_list)
+                f.write("atoms x y z\n"); df = pd.DataFrame(x_hat_2d, columns=['x', 'y', 'z']); df.insert(0, 'Atom', atom_list)
                 df.to_csv(f, sep=' ', index=False, header=False, float_format="%.10f")
-            
             with open("y_vectors.out", "w") as f:
-                f.write("atoms x y z\n")
-                df = pd.DataFrame(y_hat_2d, columns=['x', 'y', 'z'])
-                df.insert(0, 'Atom', atom_list)
+                f.write("atoms x y z\n"); df = pd.DataFrame(y_hat_2d, columns=['x', 'y', 'z']); df.insert(0, 'Atom', atom_list)
                 df.to_csv(f, sep=' ', index=False, header=False, float_format="%.10f")
         else:
-            # Save without atom labels
-            with open("x_vectors.out", "w") as f:
-                f.write("x y z\n")
-                np.savetxt(f, x_hat_2d, fmt='%18.10f')
-
-            with open("y_vectors.out", "w") as f:
-                f.write("x y z\n")
-                np.savetxt(f, y_hat_2d, fmt='%18.10f')
-                
+            with open("x_vectors.out", "w") as f: f.write("x y z\n"); np.savetxt(f, x_hat_2d, fmt='%18.10f')
+            with open("y_vectors.out", "w") as f: f.write("x y z\n"); np.savetxt(f, y_hat_2d, fmt='%18.10f')
         print("✅ x_hat and y_hat vectors saved to x_vectors.out and y_vectors.out")
-        
-        # --- Continue with plotting and animation ---
+
         X, Y, E_A, E_B, had_neg_sqrt = logic.compute_surfaces(params, E_X)
         if had_neg_sqrt:
             print("⚠️  Some negative values in sqrt term were set to zero during surface calculation.")
@@ -326,12 +345,16 @@ def main():
             if ask_yes_no("Save animation as GIF?"):
                 gif_path = safe_save_path("GIF filename", "conical_intersection_rotation.gif")
                 logic.animate_surfaces(X, Y, E_A, E_B, logic.DEFAULT_FIGSIZE[0], logic.DEFAULT_FIGSIZE[1], logic.DEFAULT_ANIM_DPI, logic.DEFAULT_ANIM_FPS, gif_path, writer='pillow')
-        
+
         print("\n All Done! Thank you for using ConeZen.")
 
     except KeyboardInterrupt:
         print("\nInterrupted. Exiting gracefully.")
         sys.exit(0)
+    except Exception as e:
+        print(f"\nAn unexpected error occurred: {e}")
+        sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

@@ -16,9 +16,14 @@ from . import logic
 def _generate_state_headers(num_singlets=20, num_triplets=20):
     """Generates a dictionary mapping common state names to their file header patterns."""
     headers = {}
-    for n in range(1, num_singlets + 1):
+    # FIX: According to SHARC-Molcas convention (and the project's README),
+    # the ground state S0 is s1 1, S1 is s1 2, and so on.
+    # Therefore, state Sn corresponds to the header number n+1.
+    for n in range(num_singlets): # n goes from 0 to 19
         state_name = f"S{n}"
-        headers[state_name] = f"m1 1 s1 {n} ms1 0"
+        headers[state_name] = f"m1 1 s1 {n+1} ms1 0"
+
+    # For triplets, T1 is typically the lowest, corresponding to s1 1 in the triplet manifold.
     for n in range(1, num_triplets + 1):
         state_name_base = f"T{n}"
         headers[f"{state_name_base}_ms-1"] = f"m1 3 s1 {n} ms1 -1"
@@ -43,12 +48,14 @@ def _extract_gradient(file_path, state_name, state_headers):
         return None, None
 
     for i, line in enumerate(lines):
-        # We only search for the gradient header part, as it's unique enough
-        if header_to_find in line and "m2" not in line:
+        parts = line.strip().split()
+        # Make the search more specific. The header line for gradients
+        # should start with the number of atoms (a digit).
+        if parts and parts[0].isdigit() and header_to_find in line and "m2" not in line:
             found_header_line = line.strip()
             gradient_data = []
             try:
-                num_atoms = int(line.strip().split()[0])
+                num_atoms = int(parts[0])
                 if i + 1 + num_atoms > len(lines):
                     return None, None
                 for j in range(num_atoms):

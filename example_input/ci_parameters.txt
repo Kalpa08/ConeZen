@@ -1,0 +1,8 @@
+Please enter the conical intersection parameters:
+del_gh (δ_gh): 0.0949
+delta_gh (Δ_gh): 0.5320
+sigma (σ): 0.9550
+theta_s (θ_s) in degrees: 0
+Enter the energy of the intersection point, E_X (Hartree): 0
+
+J. Chem. Theory Comput. 2016, 12, 3636−3653

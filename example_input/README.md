@@ -26,7 +26,7 @@ This example uses the manual parameter input workflow of ConeZen, where you prov
     * `theta_s (θ_s) in degrees`: **0**
     * `Energy of the intersection point, E_X (Hartree)`: **0**
 
-5.  Follow the remaining prompts to visualize and save the results. The output should match the bifurcating sloped topography described in the paper.
+5.  Follow the remaining prompts to visualize and save the results. The output should match the peaked single path topography described in the paper.
 
 
 

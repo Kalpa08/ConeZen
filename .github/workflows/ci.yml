@@ -30,8 +30,8 @@ jobs:
       uses: actions/cache@v3
       with:
         path: ~/.cache/pip
-        # Create a new cache if requirements change
-        key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml', '**/setup.py') }}
+        # Create a new cache only if pyproject.toml changes
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/pyproject.toml') }}
         restore-keys: |
           ${{ runner.os }}-pip-
 
@@ -43,15 +43,17 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        # Assumes flake8 and pytest are in your [test] extras
+        # Install flake8 for linting, then install the package with its test extras
+        pip install flake8
         pip install -e .[test]
 
     - name: Lint with flake8
       run: |
+        # Lint the package source in the 'src' directory and any top-level tests folder
         # Stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide.
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
+        flake8 src/conezen tests --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings.
+        flake8 src/conezen tests --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
 
     - name: Test with pytest
       run: |

@@ -1,5 +1,5 @@
 ---
-title: 'ConeZen: A Python Package for Visualizing Conical Intersection Branching Planes'
+title: 'ConeZen: A Python Toolkit for Characterizing and Visualizing Conical Intersection Topologies'
 tags:
   - Python
   - computational chemistry

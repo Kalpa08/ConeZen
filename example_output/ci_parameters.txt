@@ -1,0 +1,6 @@
+Branching Plane Key Quantities
+========================================
+theta_s (θ_s) in degrees: -15.206081
+del_gh (δ_gh): 0.109165
+delta_gh (Δ_gh): 0.462758
+sigma (σ): 0.811237

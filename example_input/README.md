@@ -11,8 +11,10 @@ The files in this directory serve as demonstration input data for:
  ## File Descriptions
 - S0_gradient.out: Example gradient vector file for S0 (format: N x 3, plain text)
 - S1_gradient.out: Example gradient vector file for S1 (format: N x 3, plain text)
-- NAC_S0_S1.out: Example nonadiabatic coupling (NAC) vector file (format: N x 3, plain text)
-- 
+- NAC_S0_S1.out: Example nonadiabatic coupling (NAC) vector file between S0 and S1 (format: N x 3, plain text)
+- QM.out: The main output file from a SHARC/OpenMolcas calculation. ConeZen can parse this file directly to extract the required gradients and NAC vectors.
+
+
   ## Notes
 All files are for demonstration and testing only. Replace with your quantum chemistry output files for real analysis.
 File format: Each file should be a plain text file, with one row per atom and three columns (x, y, z components).

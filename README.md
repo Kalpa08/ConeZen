@@ -6,9 +6,10 @@
 <h1 align="center">ConeZen</h1>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3.0"></a>
-  <a href="#"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python Version"></a>
-  <a href="https://doi.org/10.5281/zenodo.16161336"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16161336.svg" alt="DOI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3.0"></a>
+  <a href="#"><img src="https://img.shields.io/badge/python-3.11+-blue.svg" alt="Python Version"></a>
+  <a href="https://doi.org/10.5281/zenodo.16161336"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.16161336.svg" alt="DOI"></a>
+  <a href="https://conezen.pages.dev"><img src="https://img.shields.io/badge/Deployed%20on-Cloudflare%20Pages-orange?logo=cloudflare" alt="Cloudflare Deploy"></a>
 </p>
 
 <p align="center"><i>Visualiser for Conical Intersection Branching Planes</i></p>
